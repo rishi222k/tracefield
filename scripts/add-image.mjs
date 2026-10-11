@@ -65,6 +65,7 @@ export async function readIndex(library){
 }
 export async function addImage(file,{id,title,library,replace=false}={}){
  library??=path.join(import.meta.dirname,'..','public','library');
+ const explicitId=id!==undefined;
  id=slugify(id||path.basename(file));
  if(['orange','purple'].includes(id))throw new Error('That id is reserved for a bundled sample.');
  if((await stat(file)).size>MAX_BYTES)throw new Error('Image is larger than 20 MB.');
@@ -73,11 +74,23 @@ export async function addImage(file,{id,title,library,replace=false}={}){
  const lock=path.join(library,'.write-lock');
  try{await mkdir(lock);}catch(e){if(e.code==='EEXIST')throw new Error('Another library operation is in progress. Retry when it finishes.');throw e;}
  try{
-  const index=await readIndex(library),existing=index.find(e=>e.id===id),dir=path.join(library,id);
+  const index=await readIndex(library);
+  if(!explicitId&&!replace){
+   for(const entry of index){
+    if(!entry.scene.startsWith('/library/'))continue;
+    const candidate=validateScene(JSON.parse(await readFile(path.join(library,entry.id,'scene.json'),'utf8')));
+    if(candidate.analysis?.inputSha256===inputSha||candidate.analysis?.sourceSha256===inputSha){id=entry.id;break;}
+   }
+  }
+  const existing=index.find(e=>e.id===id),dir=path.join(library,id);
   if(!existing){let present=false;try{await stat(dir);present=true;}catch(error){if(error.code!=='ENOENT')throw error;}if(present)throw new Error(`Unindexed study directory ${id} already exists. Inspect it before adding this ID; its contents were preserved.`);}
   if(existing&&!replace){
    const scene=validateScene(JSON.parse(await readFile(path.join(dir,'scene.json'),'utf8')));
-   if(scene.analysis?.inputSha256===inputSha||scene.analysis?.sourceSha256===inputSha)return {id,scene,sha:scene.analysis.sourceSha256,reused:true};
+   if(scene.analysis?.inputSha256===inputSha||scene.analysis?.sourceSha256===inputSha){
+    const saved=await readFile(path.join(dir,path.basename(scene.image.src)));
+    if(sha256(saved)!==scene.analysis.sourceSha256)throw new Error('The saved image has changed. Run npm run validate and inspect it before reuse.');
+    return {id,scene,sha:scene.analysis.sourceSha256,reused:true};
+   }
    throw new Error(`Study ${id} already exists. Choose a different --id, or explicitly use --replace after saving its project.`);
   }
   const img=canonical(decode(original)),bytes=PNG.sync.write({width:img.width,height:img.height,data:img.data}),sha=sha256(bytes);

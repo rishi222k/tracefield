@@ -72,3 +72,14 @@ test('EXIF-rotated JPEGs are rejected rather than silently misplacing anchors',a
  tiff.writeUInt16LE(1,18);image.exifBuffer=Buffer.concat([Buffer.from('Exif\0\0'),tiff]);
  assert.equal(decode(jpeg.encode(image,90).data).width,2);
 });
+
+test('a renamed input reuses its authored scene and corrupted source files fail explicitly',async()=>{
+ const dir=await mkdtemp(path.join(tmpdir(),'tracefield-content-')),file=await fixture(dir),library=path.join(dir,'library');
+ const first=await addImage(file,{library});
+ const scenePath=path.join(library,first.id,'scene.json'),scene=JSON.parse(await readFile(scenePath,'utf8'));scene.subtitle='Authored scene';await writeFile(scenePath,JSON.stringify(scene));
+ const renamed=path.join(dir,'renamed.png');await writeFile(renamed,await readFile(file));
+ const second=await addImage(renamed,{library});assert.equal(second.id,first.id);assert.equal(second.reused,true);assert.equal(second.scene.subtitle,'Authored scene');
+ await writeFile(path.join(library,first.id,'image.png'),'corrupted');
+ await assert.rejects(addImage(renamed,{library}),/saved image has changed/);
+ assert.equal(JSON.parse(await readFile(scenePath,'utf8')).subtitle,'Authored scene');
+});
