@@ -70,3 +70,10 @@ test("export sizing keeps landscapes and portraits bounded and codec dimensions 
     assert.ok(size.width >= 2 && size.height >= 2);
   }
 });
+
+test("native video sizing keeps the photo's exact frame, including odd portrait and landscape dimensions",()=>{
+  for(const [width,height] of [[1026,1533],[1126,1397],[1086,1448],[1533,1026],[4096,4096],[1,1]])
+    assert.deepEqual(exportSize(width,height,'source'),{width,height});
+  for(const [width,height] of [[0,10],[4097,10],[10,NaN],[10.5,10]])
+    assert.throws(()=>exportSize(width,height,'source'));
+});

@@ -92,9 +92,9 @@ export function render(ctx, image, scene, settings, time, width, height, options
     if(!box)return;boxes.push(box);
     const end={x:box.x+(box.x<p.x?tw:0),y:box.y+th*.5};
     const elbow={x:p.x+(end.x-p.x)*.45,y:end.y};
-    ctx.strokeStyle=settings.primary;ctx.globalAlpha=.53*progress*alpha;ctx.lineWidth=.8*unit;ctx.setLineDash([1*unit,5*unit]);segment(ctx,p,elbow);segment(ctx,elbow,end);ctx.setLineDash([]);
-    ctx.fillStyle=contrast(settings.primary)==='#f5f6ef'?'rgba(245,246,239,.88)':'rgba(12,19,17,.82)';ctx.globalAlpha=progress*alpha;ctx.fillRect(box.x-3*unit,box.y-2*unit,tw+6*unit,th+4*unit);
-    ctx.fillStyle=settings.primary;ctx.globalAlpha=.94*progress*progress*alpha;ctx.textBaseline='top';
+    ctx.strokeStyle=settings.primary;ctx.globalAlpha=.53*progress*alpha*((settings.labelOpacity??100)/100);ctx.lineWidth=.8*unit;ctx.setLineDash([1*unit,5*unit]);segment(ctx,p,elbow);segment(ctx,elbow,end);ctx.setLineDash([]);
+    ctx.fillStyle=contrast(settings.primary)==='#f5f6ef'?'rgba(245,246,239,.88)':'rgba(12,19,17,.82)';ctx.globalAlpha=progress*alpha*((settings.labelOpacity??100)/100);ctx.fillRect(box.x-3*unit,box.y-2*unit,tw+6*unit,th+4*unit);
+    ctx.fillStyle=settings.primary;ctx.globalAlpha=.94*progress*progress*alpha*((settings.labelOpacity??100)/100);ctx.textBaseline='top';
     const text=label;
     ctx.fillText(text,box.x,box.y);
   });
@@ -113,7 +113,7 @@ export function render(ctx, image, scene, settings, time, width, height, options
       ctx.save();ctx.filter=settings.imageStyle==='original'?'none':`grayscale(100%) brightness(${processed?100:settings.exposure}%)`;
       ctx.drawImage(processed&&options.xray?options.xray:image,sx,sy,crop,crop,px,py,size,size);ctx.restore();
       outlinedRect(ctx,px,py,size,size);corners(ctx,px+size*.5,py+size*.5,19*unit);
-      ctx.fillStyle=settings.primary;ctx.font=`${9*unit}px ${mono}`;ctx.textBaseline='top';ctx.fillText(active.label,px,py+size+8*unit);
+      ctx.fillStyle=settings.primary;ctx.font=`${9*unit}px ${mono}`;ctx.textBaseline='top';ctx.globalAlpha*=(settings.labelOpacity??100)/100;ctx.fillText(active.label,px,py+size+8*unit);
       const anchor=scene.nodes.find(n=>n.id===active.id);
       ctx.fillStyle=settings.accent;ctx.font=`${7*unit}px ${mono}`;ctx.fillText(`${Math.round(anchor.x*1000)} / ${Math.round(anchor.y*1000)}`,px,py+size+21*unit);
     }

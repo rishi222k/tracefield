@@ -5,7 +5,7 @@ import {
   START_FRAME,
 } from "../../public/settings.js";
 import { EFFECT_VERSION, PROCESSED_STYLES } from "../../public/image-effects.js";
-import { validateProject, validateImageHeader } from "../../public/project.js";
+import { validateProject, validateImageHeader, PROJECT_VERSION } from "../../public/project.js";
 import { render, makeXray } from "../../public/render.js";
 import { render as renderV2 } from "../../public/render-v2.js";
 import { render as renderV4 } from "../../public/render-v4.js";
@@ -43,7 +43,7 @@ export type Scene = {
   focus?: string[];
 };
 export type Project = {
-  version: 2;
+  version: typeof PROJECT_VERSION;
   rendererVersion: string;
   effectVersion: string;
   scene: Scene;
@@ -415,7 +415,7 @@ export class Studio {
     const scene = structuredClone(this.state.scene);
     scene.image.src = this.portableImage;
     return {
-      version: 2,
+      version: PROJECT_VERSION,
       rendererVersion: this.state.rendererVersion,
       effectVersion: EFFECT_VERSION,
       scene,

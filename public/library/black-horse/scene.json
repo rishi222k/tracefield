@@ -1,0 +1,563 @@
+{
+  "version": 1,
+  "id": "black-horse",
+  "title": "Black Horse",
+  "subtitle": "Visible ears, eye, muzzle, body contours and limb bends; sky and grass excluded.",
+  "analysis": {
+    "version": "tracefield-interpretation-v1",
+    "sourceSha256": "547b5d6b8af5437918767537827862e58de1a8b462e8fe0d010b594254d87bef",
+    "type": "agent-authored",
+    "inputSha256": "2d6b8897ba0cfb7a10f3f2865eae1037c2befea27aa9a2f548ac5abea38c6aff",
+    "ingestionVersion": "canonical-png-v1",
+    "proposalVersion": "feature-proposal-v3"
+  },
+  "image": {
+    "src": "/library/black-horse/image.png",
+    "width": 1024,
+    "height": 1536
+  },
+  "nodes": [
+    {
+      "id": "ear-tip-1",
+      "x": 0.34,
+      "y": 0.271,
+      "label": "ear-tip.01",
+      "kind": "observation",
+      "reason": "Left ear tip. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "ear-tip-2",
+      "x": 0.441,
+      "y": 0.272,
+      "label": "ear-tip.02",
+      "kind": "observation",
+      "reason": "Right ear tip. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "eye-1",
+      "x": 0.393,
+      "y": 0.349,
+      "label": "eye.01",
+      "kind": "observation",
+      "reason": "Visible eye highlight. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "muzzle-1",
+      "x": 0.341,
+      "y": 0.426,
+      "label": "muzzle.01",
+      "kind": "observation",
+      "reason": "Visible nostril. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "muzzle-2",
+      "x": 0.326,
+      "y": 0.446,
+      "label": "muzzle.02",
+      "kind": "observation",
+      "reason": "Lower muzzle outline. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "muzzle-3",
+      "x": 0.375,
+      "y": 0.438,
+      "label": "muzzle.03",
+      "kind": "observation",
+      "reason": "Right muzzle edge. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "contour-1",
+      "x": 0.337,
+      "y": 0.332,
+      "label": "contour.01",
+      "kind": "observation",
+      "reason": "Left mane boundary. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "contour-2",
+      "x": 0.503,
+      "y": 0.346,
+      "label": "contour.02",
+      "kind": "observation",
+      "reason": "Upper neck outline. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "contour-3",
+      "x": 0.547,
+      "y": 0.442,
+      "label": "contour.03",
+      "kind": "observation",
+      "reason": "Right neck turn. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "contour-4",
+      "x": 0.359,
+      "y": 0.508,
+      "label": "contour.04",
+      "kind": "observation",
+      "reason": "Front chest contour. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "contour-5",
+      "x": 0.646,
+      "y": 0.484,
+      "label": "contour.05",
+      "kind": "observation",
+      "reason": "Upper back contour. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "contour-6",
+      "x": 0.791,
+      "y": 0.513,
+      "label": "contour.06",
+      "kind": "observation",
+      "reason": "Right rump contour. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "contour-7",
+      "x": 0.562,
+      "y": 0.599,
+      "label": "contour.07",
+      "kind": "observation",
+      "reason": "Lower belly contour. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "joint-1",
+      "x": 0.404,
+      "y": 0.552,
+      "label": "joint.01",
+      "kind": "observation",
+      "reason": "Raised front limb junction. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "joint-2",
+      "x": 0.311,
+      "y": 0.577,
+      "label": "joint.02",
+      "kind": "observation",
+      "reason": "Raised front knee bend. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "joint-3",
+      "x": 0.271,
+      "y": 0.633,
+      "label": "joint.03",
+      "kind": "observation",
+      "reason": "Lower front limb bend. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "joint-4",
+      "x": 0.73,
+      "y": 0.666,
+      "label": "joint.04",
+      "kind": "observation",
+      "reason": "Rear leg bend. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "joint-5",
+      "x": 0.8,
+      "y": 0.701,
+      "label": "joint.05",
+      "kind": "observation",
+      "reason": "Second rear leg bend. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        -18
+      ]
+    },
+    {
+      "id": "hoof-1",
+      "x": 0.207,
+      "y": 0.69,
+      "label": "hoof.01",
+      "kind": "observation",
+      "reason": "Visible left front hoof. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "hoof-2",
+      "x": 0.317,
+      "y": 0.671,
+      "label": "hoof.02",
+      "kind": "observation",
+      "reason": "Visible raised front hoof. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "hoof-3",
+      "x": 0.641,
+      "y": 0.781,
+      "label": "hoof.03",
+      "kind": "observation",
+      "reason": "Visible left hind hoof. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "hoof-4",
+      "x": 0.787,
+      "y": 0.782,
+      "label": "hoof.04",
+      "kind": "observation",
+      "reason": "Visible right hind hoof. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "tail-1",
+      "x": 0.922,
+      "y": 0.689,
+      "label": "tail.01",
+      "kind": "observation",
+      "reason": "Outer tail contour. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        -18
+      ]
+    }
+  ],
+  "networks": {
+    "constellation": {
+      "title": "Constellation",
+      "meaning": "Decorative subject-bound geometric web.",
+      "edges": [
+        {
+          "a": "ear-tip-1",
+          "b": "ear-tip-2",
+          "reason": "ear-tip.01 → ear-tip.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "ear-tip-1",
+          "b": "contour-1",
+          "reason": "ear-tip.01 → contour.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "ear-tip-2",
+          "b": "contour-2",
+          "reason": "ear-tip.02 → contour.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7835
+        },
+        {
+          "a": "ear-tip-2",
+          "b": "eye-1",
+          "reason": "ear-tip.02 → eye.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.818
+        },
+        {
+          "a": "eye-1",
+          "b": "contour-1",
+          "reason": "eye.01 → contour.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "eye-1",
+          "b": "contour-2",
+          "reason": "eye.01 → contour.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9395
+        },
+        {
+          "a": "contour-2",
+          "b": "contour-3",
+          "reason": "contour.02 → contour.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "eye-1",
+          "b": "muzzle-1",
+          "reason": "eye.01 → muzzle.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "muzzle-1",
+          "b": "muzzle-3",
+          "reason": "muzzle.01 → muzzle.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "muzzle-1",
+          "b": "muzzle-2",
+          "reason": "muzzle.01 → muzzle.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "muzzle-3",
+          "b": "contour-3",
+          "reason": "muzzle.03 → contour.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9378
+        },
+        {
+          "a": "muzzle-2",
+          "b": "muzzle-3",
+          "reason": "muzzle.02 → muzzle.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6055
+        },
+        {
+          "a": "muzzle-3",
+          "b": "contour-4",
+          "reason": "muzzle.03 → contour.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.649
+        },
+        {
+          "a": "contour-3",
+          "b": "contour-5",
+          "reason": "contour.03 → contour.05: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "contour-3",
+          "b": "joint-1",
+          "reason": "contour.03 → joint.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.651
+        },
+        {
+          "a": "muzzle-2",
+          "b": "contour-4",
+          "reason": "muzzle.02 → contour.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "contour-5",
+          "b": "contour-6",
+          "reason": "contour.05 → contour.06: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "contour-5",
+          "b": "contour-7",
+          "reason": "contour.05 → contour.07: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "contour-4",
+          "b": "joint-1",
+          "reason": "contour.04 → joint.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "contour-4",
+          "b": "joint-2",
+          "reason": "contour.04 → joint.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6732
+        },
+        {
+          "a": "contour-6",
+          "b": "joint-4",
+          "reason": "contour.06 → joint.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.998
+        },
+        {
+          "a": "contour-6",
+          "b": "tail-1",
+          "reason": "contour.06 → tail.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6221
+        },
+        {
+          "a": "joint-1",
+          "b": "joint-2",
+          "reason": "joint.01 → joint.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "contour-7",
+          "b": "joint-1",
+          "reason": "contour.07 → joint.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "joint-2",
+          "b": "joint-3",
+          "reason": "joint.02 → joint.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "contour-7",
+          "b": "joint-4",
+          "reason": "contour.07 → joint.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "joint-3",
+          "b": "hoof-2",
+          "reason": "joint.03 → hoof.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "joint-3",
+          "b": "hoof-1",
+          "reason": "joint.03 → hoof.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9561
+        },
+        {
+          "a": "joint-4",
+          "b": "joint-5",
+          "reason": "joint.04 → joint.05: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "joint-4",
+          "b": "hoof-3",
+          "reason": "joint.04 → hoof.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7348
+        },
+        {
+          "a": "hoof-1",
+          "b": "hoof-2",
+          "reason": "hoof.01 → hoof.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7123
+        },
+        {
+          "a": "hoof-2",
+          "b": "hoof-3",
+          "reason": "hoof.02 → hoof.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6329
+        },
+        {
+          "a": "joint-5",
+          "b": "tail-1",
+          "reason": "joint.05 → tail.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "joint-5",
+          "b": "hoof-4",
+          "reason": "joint.05 → hoof.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "hoof-3",
+          "b": "hoof-4",
+          "reason": "hoof.03 → hoof.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        }
+      ]
+    },
+    "structure": {
+      "title": "Structure",
+      "meaning": "Unused; no measured relationship claimed.",
+      "edges": []
+    },
+    "pattern": {
+      "title": "Pattern",
+      "meaning": "Unused; no measured relationship claimed.",
+      "edges": []
+    }
+  },
+  "rules": {
+    "roles": [
+      {
+        "role": "ear-tip",
+        "rule": "Visible extremity of a horse ear."
+      },
+      {
+        "role": "eye",
+        "rule": "Visible eye highlight."
+      },
+      {
+        "role": "muzzle",
+        "rule": "Visible nostril or muzzle contour."
+      },
+      {
+        "role": "contour",
+        "rule": "Visible mane, neck or body contour."
+      },
+      {
+        "role": "joint",
+        "rule": "Visible bend or junction of a leg."
+      },
+      {
+        "role": "hoof",
+        "rule": "Visible lower leg or hoof extremity."
+      },
+      {
+        "role": "tail",
+        "rule": "Visible tail contour."
+      }
+    ],
+    "link": "Decorative subject-bound neighbours with empty diametral circles, a narrow image-saliency envelope and shortest bridges between disconnected subject parts; no measured or semantic relationships."
+  },
+  "focus": [
+    "eye-1",
+    "muzzle-1"
+  ],
+  "observations": []
+}

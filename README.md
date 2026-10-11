@@ -4,7 +4,7 @@
 
 The style is a **subject-bound constellation overlay**: a decorative node-link web anchored to the focal subject. Its targeting brackets, callouts and tracing motion belong to the visual language of HUDs and fictional interface design (FUI), as seen in [Jorge Almeida's interface work](https://jorgeonline.me/Iron-Man-2). Tracefield is the project's name, rather than a claim that this is a recognized historical style.
 
-> Stable runtime setup fetches the `v0.1.0` Git tag. Before that tag is published, maintainer candidate testing uses an exact commit override; default setup reports the missing release explicitly.
+> Stable runtime setup fetches the published, immutable `v0.1.0` Git tag. The source gallery below is a later contribution; using the stable skill does not silently change an existing lab or add demo images.
 
 ## Use the skill
 
@@ -43,11 +43,29 @@ The skill sets up the pinned runtime in `~/tracefield-lab` (override with `TRACE
 The approved studio has a neutral dark workspace, collapsible image rail, **Original / Network** comparison and a compact inspector:
 
 - **Blend:** Original, Mono, X-ray, Dark X-ray and Blueprint, with intensity controls.
-- **Markers:** seven styles, size, accent share and label share.
+- **Markers:** seven styles, size, accent share and label opacity. Opacity fades label text and callouts without changing the chosen labels.
 - **Timeline:** play, restart, scrub, loop length and speed; the v3 Trace loop defaults to 2×.
-- **Export:** Image, Loop, Project and Open project. Opening a saved project works even when the library is empty.
+- **Import Project:** a separate button beside Export; restores a saved project even when the library is empty.
+- **Export:** Image, Loop and Project JSON.
 
-There is no photo upload inside the studio. The agent adds images and authors the rule set; browser controls change presentation without changing those decisions. This repository intentionally ships **no demo photos**. The empty studio becomes useful when the skill adds your first image.
+There is no photo upload inside the studio. The agent adds images and authors the rule set; browser controls change presentation without changing those decisions. The current source gallery includes six contributed generated examples. Your own photos still enter through the skill. Published runtime `v0.1.0` retains its original empty library; it is immutable and is not silently updated by a newer source checkout.
+
+## Gallery examples
+
+The gallery includes **Marble Study, Tree Frog, Painted Lady, Swallowtail, Honeybee and Black Horse**. Each has 20–23 authored visible-detail anchors and a saved decorative web. The generator was reported by the contributor as GPT 6; the files are generated illustrations, not wildlife records or documentary photographs.
+
+| Example | Supplied resolution | Anchors |
+| --- | --- | --- |
+| Marble Study | 940 × 1673 | 22 |
+| Tree Frog | 1086 × 1448 | 20 |
+| Painted Lady | 1126 × 1397 | 21 |
+| Swallowtail | 1086 × 1448 | 22 |
+| Honeybee | 1026 × 1533 | 22 |
+| Black Horse | 1024 × 1536 | 23 |
+
+The supplied files are below 4K; exports preserve their canonical resolution. No upscaling is claimed. [Demo provenance](public/demo-assets.json) and [CC0 dedication](DEMO_IMAGES_LICENSE.md) cover only these six studies. Other local library files remain ignored and private by default.
+
+Clone the current source and run `npm ci` followed by `npm run lab -- --scene honeybee` to browse them. The skill's pinned `v0.1.0` runtime can ingest supplied copies using its normal workflow, as exercised in the six-image acceptance test. A future gallery runtime needs its own reviewed release tag.
 
 ## Repeatability
 
@@ -59,7 +77,9 @@ There is no photo upload inside the studio. The agent adds images and authors th
 | Presentation | The saved project and renderer/effect IDs produce the same logical network, settings and timeline. |
 | Media | Browser rasterization, fonts and encoding can change exact output bytes across systems. |
 
-**Export Project** embeds the image, scene, settings, version IDs and paused frame. **Open project** restores them without asking the agent to interpret again. Preserve the project and exact runtime commit for repeatable work. Unknown renderer/effect versions fail explicitly; preserved v2/v4 renderers handle older full projects. Sample-only legacy variations require the original private lab.
+**Export → Project JSON** embeds the image, scene, settings, version IDs and paused frame. **Import Project** restores them without asking the agent to interpret again. In the pinned `v0.1.0` studio these controls are named Project and Open project within Export. Preserve the project and exact runtime commit for repeatable work. Unknown renderer/effect versions fail explicitly; preserved v2/v4 renderers handle older full projects. Sample-only legacy variations require the original private lab.
+
+New project JSON uses format v3 to retain label opacity. This source studio imports older v1/v2 projects with unchanged label selection and full opacity. The published `v0.1.0` runtime rejects format v3; import it in this newer studio instead.
 
 The web uses a fixed subject-bound Gabriel-neighbour rule and short bridges between subject parts. Saliency is a pixel heuristic, not semantic segmentation. The agent reviews the settled frame and a complete loop, refining irrelevant anchors when clutter distracts the draft. Labels explain visible features; links are decorative rather than scientific relationships. See [the decision contract](docs/decision-contract.md).
 
@@ -80,11 +100,11 @@ npm run lab -- --scene photo
 
 `npm run lab` verifies the checkout's server identity and selects a free loopback port in 4318–4418; it never reuses an unrelated app. `npm start -- --port 4319` runs a foreground development server. `npm run build` creates a static local build; `npm run preview -- --port 4319` serves it. Building includes your local library, so a build containing personal studies needs the same sharing permission as those studies.
 
-Images, projects and exports stay in the local renderer. The agent's image inspection follows its host provider's privacy settings. Local library files are ignored by Git, and the tracked starter library stays empty. No analytics or remote rendering is included.
+Images, projects and exports stay in the local renderer. The agent's image inspection follows its host provider's privacy settings. Personal library files are ignored by Git; only the six documented demo studies are tracked. No analytics or remote rendering is included.
 
 ## Export formats
 
-**Image** is a PNG at canonical source resolution. **Loop** renders one complete cycle from time zero at 24/30/60 fps and a 720/1080 px maximum dimension. It previews before download, uses MP4/AVC when available or WebM/VP9/VP8 otherwise, and supports cancellation. Unsupported browser encoders get an explicit error. Fractional timing rounds up by less than one frame; no duplicate endpoint is appended.
+**Image** is a PNG at canonical source resolution. **Loop** defaults to the original image dimensions and aspect ratio, with 720/1080 px maximum-dimension options for smaller files and 24/30/60 fps. It renders one complete cycle from time zero and previews before download. It uses MP4/AVC when compatible with the selected dimensions, or WebM/VP9/VP8 otherwise, and supports cancellation. Native odd dimensions are retained exactly; a browser without a compatible encoder gets an explicit error and can use a smaller preset. Fractional timing rounds up by less than one frame; no duplicate endpoint is appended.
 
 X-ray is a photographic-negative effect. Dark X-ray combines local luminance detail with a continuous surface-tone layer; Blueprint uses fixed image-edge operations. They are pixel treatments, with no medical interpretation, segmentation masks or per-image model styling. The approved pixel equations are preserved in `public/image-effects.js`.
 
@@ -103,6 +123,6 @@ The source is a clean continuation of the private Node Network Animation experim
 
 ## License
 
-Original code, skill instructions and helpers are **MIT licensed**. Bundled third-party source and fonts retain their licenses: [third-party notices](THIRD_PARTY_NOTICES.md), [font notices](public/fonts/) and [asset provenance](references.md). Your images and exports retain their own rights; the code license does not grant rights to them. Future public demo assets need source, creator and redistribution-license details.
+Original code, skill instructions and helpers are **MIT licensed**. The six contributed gallery images and saved demo studies are **CC0-1.0**; see [their dedication](DEMO_IMAGES_LICENSE.md). Bundled third-party source and fonts retain their licenses: [third-party notices](THIRD_PARTY_NOTICES.md), [font notices](public/fonts/) and [asset provenance](references.md). Your images and exports retain their own rights; the code license does not grant rights to them. Future public demo assets need source, creator and redistribution-license details.
 
 See [Contributing](CONTRIBUTING.md) and [Security](SECURITY.md).

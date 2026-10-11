@@ -60,6 +60,8 @@ export default defineConfig({
       async closeBundle() {
         await mkdir(path.join(root, "dist"), { recursive: true });
         await cp(path.join(root,"THIRD_PARTY_NOTICES.md"),path.join(root,"dist/THIRD_PARTY_NOTICES.md"));
+        for (const file of ["DEMO_IMAGES_LICENSE.md", "public/demo-assets.json"])
+          await cp(path.join(root, file), path.join(root, "dist", path.basename(file)));
         for (const dir of ["assets", "scenes", "fonts", "library"])
           await cp(
             path.join(root, "public", dir),
