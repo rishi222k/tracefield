@@ -1,0 +1,8 @@
+{
+  "name": "tracefield",
+  "description": "Create subject-bound constellation overlays from a photograph in a local studio.",
+  "version": "0.1.0",
+  "author": {"name": "Rishi Raghu"},
+  "repository": "https://github.com/rishi222k/tracefield",
+  "license": "MIT"
+}

@@ -5,3 +5,10 @@ node_modules/
 !.env.example
 *.log
 dist/
+
+# Private local studies, runtime state and exports never enter Git by default.
+public/library/*
+!public/library/index.json
+!public/library/.gitkeep
+.tracefield-*
+exports/

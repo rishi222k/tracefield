@@ -13,7 +13,7 @@ export async function rebuildNet(id,library=path.join(import.meta.dirname,'..','
  const file=path.join(library,id,'scene.json'),scene=JSON.parse(await readFile(file,'utf8'));
  const img=decode(await readFile(path.join(library,id,path.basename(scene.image.src))));
  if(img.width!==scene.image.width||img.height!==scene.image.height)throw new Error('Image size does not match the scene.');
- scene.networks.constellation.edges=subjectConstellation(scene,img.data,img.width,img.height);
+ scene.networks.constellation.edges=subjectConstellation(scene,img.data,img.width,img.height).map(edge=>{const a=scene.nodes.find(n=>n.id===edge.a),b=scene.nodes.find(n=>n.id===edge.b);return {...edge,reason:`${a.label} → ${b.label}: ${edge.reason}`};});
  validateScene(scene);
  await writeFile(file,JSON.stringify(scene,null,2)+'\n');
  return scene;

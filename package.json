@@ -11,7 +11,10 @@
     "check": "node scripts/check.mjs && npm run build",
     "add-image": "node scripts/add-image.mjs",
     "net": "node scripts/net.mjs",
-    "validate": "node scripts/validate-library.mjs"
+    "validate": "node scripts/validate-library.mjs",
+    "lab": "node scripts/lab.mjs",
+    "check:package": "node scripts/validate-skill.mjs",
+    "check:public": "node scripts/check-public.mjs"
   },
   "engines": {
     "node": ">=24"
@@ -44,5 +47,9 @@
   },
   "version": "0.1.0",
   "license": "MIT",
-  "description": "An agent-guided studio for subject-bound constellation overlays"
+  "description": "An agent-guided studio for subject-bound constellation overlays",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rishi222k/tracefield.git"
+  }
 }

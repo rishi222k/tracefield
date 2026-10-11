@@ -1,0 +1,12 @@
+import {readFile,access} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const read=file=>readFile(new URL('../'+file,import.meta.url),'utf8');
+const canonical=await read('skills/tracefield/SKILL.md'),plugin=await read('plugins/tracefield/skills/animate/SKILL.md');
+assert.equal(plugin.replace('name: animate\n','name: tracefield\n'),canonical,'skill copies have drifted');
+assert.match(canonical,/^---\nname: tracefield\ndescription: .+\n---/);
+assert.equal(await read('skills/tracefield/scripts/setup.mjs'),await read('plugins/tracefield/skills/animate/scripts/setup.mjs'),'setup helpers have drifted');
+const marketplace=JSON.parse(await read('.claude-plugin/marketplace.json')),manifest=JSON.parse(await read('plugins/tracefield/.claude-plugin/plugin.json')),pkg=JSON.parse(await read('package.json'));
+assert.equal(marketplace.name,'tracefield');assert.equal(marketplace.plugins[0].name,manifest.name);assert.equal(manifest.version,pkg.version);assert.equal(manifest.license,'MIT');
+await access(new URL('../'+marketplace.plugins[0].source+'/skills/animate/SKILL.md',import.meta.url));
+for(const name of ['add-image','net','validate','lab'])assert.ok(pkg.scripts[name],`missing ${name} command`);
+console.log('Tracefield skill, plugin, helper and version metadata agree.');
