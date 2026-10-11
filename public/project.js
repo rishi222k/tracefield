@@ -8,7 +8,7 @@ import { EFFECT_VERSION } from "./image-effects.js";
 
 export function validateProject(data) {
   if (!data || ![1, 2].includes(data.version))
-    throw new Error("Not a saved Node Network project.");
+    throw new Error("Not a saved Tracefield project.");
   const settings = normalizeSettings(data.settings);
   const time =
     data.time === undefined

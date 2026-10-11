@@ -21,3 +21,5 @@ jobs:
       - run: node --test .github/scripts/validate-review-profile.test.mjs
       - run: node .github/scripts/validate-review-profile.mjs .github/review/tracefield-software-review-v1.json --profile-id tracefield-software
       - run: npm run check
+
+      - run: npm run check:public

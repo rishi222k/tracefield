@@ -5,7 +5,7 @@ export function validateScene(scene) {
   const library=/^\/library\/([a-z0-9-]{1,60})\/image\.(png|jpg)$/.exec(typeof source==='string'?source:'');
   if(typeof source!=='string'||source.length>30_000_000||(!['/assets/butterfly-orange.png','/assets/butterfly-purple.png'].includes(source)&&!library&&!/^data:image\/png;base64,[A-Za-z0-9+/]+=*$/.test(source)))throw new Error('Only bundled sample images, library images or embedded PNG images are allowed.');
   if(library&&library[1]!==scene.id)throw new Error('Library scenes must keep their own image.');
-  if((scene.id==='orange'&&source!=='/assets/butterfly-orange.png')||(scene.id==='purple'&&source!=='/assets/butterfly-purple.png'))throw new Error('Bundled scene identities must keep their source images.');
+  if(!source.startsWith('data:image/png;base64,')&&((scene.id==='orange'&&source!=='/assets/butterfly-orange.png')||(scene.id==='purple'&&source!=='/assets/butterfly-purple.png')))throw new Error('Bundled scene identities must keep their source images.');
   if (!Array.isArray(scene.nodes) || !scene.nodes.length || scene.nodes.length>250) throw new Error('Scene needs 1–250 nodes.');
   const ids = new Set();
   for (const n of scene.nodes) {

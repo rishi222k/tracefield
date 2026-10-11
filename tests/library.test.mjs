@@ -21,10 +21,12 @@ test('add-image writes a deterministic, valid library entry',async()=>{
  assert.equal(sa,sb,'same image gives the same scene');
  const scene=validateScene(JSON.parse(sa));
  assert.equal(scene.image.src,'/library/test-photo/image.png');assert.equal(scene.analysis.sourceSha256,a.sha);
- const index=JSON.parse(await readFile(path.join(dir,'a','index.json'),'utf8'));
+ const index=JSON.parse(await readFile(path.join(dir,'a','index.local.json'),'utf8'));
  assert.deepEqual(index,[{id:'test-photo',title:'Test',scene:'/library/test-photo/scene.json',thumb:'/library/test-photo/image.png'}]);
- await addImage(file,{library:path.join(dir,'a'),title:'Again'});
- assert.equal(JSON.parse(await readFile(path.join(dir,'a','index.json'),'utf8')).length,1,'re-adding replaces the entry');
+ const accepted=JSON.parse(sa);accepted.subtitle='Accepted scene';await writeFile(path.join(dir,'a','test-photo','scene.json'),JSON.stringify(accepted));
+ const reuse=await addImage(file,{library:path.join(dir,'a'),title:'Again'});
+ assert.equal(reuse.reused,true);assert.equal(reuse.scene.subtitle,'Accepted scene');
+ assert.equal(JSON.parse(await readFile(path.join(dir,'a','index.local.json'),'utf8')).length,1,'re-adding replaces the entry');
  await assert.rejects(addImage(file,{library:path.join(dir,'c'),id:'orange'}),/reserved/);
 });
 
@@ -34,4 +36,39 @@ test('library scenes can only use their own library image',async()=>{
   assert.equal(scene.id,entry.id);
   if(entry.scene.startsWith('/library/')){const other=structuredClone(scene);other.id='someone-else';assert.throws(()=>validateScene(other),/own image/);}
  }
+});
+
+test('same-name different images and malformed indexes cannot destroy saved decisions',async()=>{
+ const dir=await mkdtemp(path.join(tmpdir(),'tracefield-conflict-')),file=await fixture(dir),library=path.join(dir,'library');
+ await addImage(file,{library,id:'study'});
+ const before=await readFile(path.join(library,'study','scene.json'),'utf8');
+ const pixels=new PNG({width:2,height:2});pixels.data.fill(255);const other=path.join(dir,'other.png');await writeFile(other,PNG.sync.write(pixels));
+ await assert.rejects(addImage(other,{library,id:'study'}),/already exists/);
+ assert.equal(await readFile(path.join(library,'study','scene.json'),'utf8'),before);
+ await writeFile(path.join(library,'index.local.json'),'{broken');
+ await assert.rejects(addImage(other,{library,id:'another'}),/JSON/);
+ assert.equal(await readFile(path.join(library,'study','scene.json'),'utf8'),before);
+});
+
+test('ingestion strips metadata and white-composites transparency deterministically',async()=>{
+ const dir=await mkdtemp(path.join(tmpdir(),'tracefield-alpha-')),png=new PNG({width:2,height:1});
+ png.data.set([0,0,0,0,200,0,0,128]);const file=path.join(dir,'alpha.png');await writeFile(file,PNG.sync.write(png));
+ const {decode}=await import('../scripts/add-image.mjs');
+ const {scene}=await addImage(file,{library:path.join(dir,'library')});
+ const bytes=await readFile(path.join(dir,'library','alpha','image.png')),decoded=decode(bytes);
+ assert.deepEqual([...decoded.data],[255,255,255,255,227,127,127,255]);
+ assert.equal(scene.analysis.ingestionVersion,'canonical-png-v1');
+ const bomb=Buffer.alloc(24);Buffer.from([137,80,78,71,13,10,26,10]).copy(bomb);bomb.writeUInt32BE(100000,16);bomb.writeUInt32BE(100000,20);
+ assert.throws(()=>decode(bomb),/32 megapixels/);
+ assert.throws(()=>decode(Buffer.alloc(20_000_001)),/20 MB/);
+});
+
+test('EXIF-rotated JPEGs are rejected rather than silently misplacing anchors',async()=>{
+ const jpeg=(await import('jpeg-js')).default,{decode}=await import('../scripts/add-image.mjs');
+ const tiff=Buffer.alloc(26);tiff.write('II',0);tiff.writeUInt16LE(42,2);tiff.writeUInt32LE(8,4);tiff.writeUInt16LE(1,8);tiff.writeUInt16LE(0x112,10);tiff.writeUInt16LE(3,12);tiff.writeUInt32LE(1,14);tiff.writeUInt16LE(6,18);
+ const exifBuffer=Buffer.concat([Buffer.from('Exif\0\0'),tiff]);
+ const image={width:2,height:1,data:Buffer.from([0,0,0,255,255,255,255,255]),exifBuffer};
+ assert.throws(()=>decode(jpeg.encode(image,90).data),/Normalize/);
+ tiff.writeUInt16LE(1,18);image.exifBuffer=Buffer.concat([Buffer.from('Exif\0\0'),tiff]);
+ assert.equal(decode(jpeg.encode(image,90).data).width,2);
 });

@@ -87,6 +87,7 @@ export class Studio {
   private presentation: Snapshot = this.state;
   getPresentationSnapshot = () => this.presentation;
   private image: HTMLImageElement | null = null;
+  private portableImage = "";
   private processed: HTMLCanvasElement | null = null;
   private canvas: HTMLCanvasElement | null = null;
   private observer: ResizeObserver | null = null;
@@ -353,7 +354,16 @@ export class Studio {
           settings.surfaceTone,
         )
       : null;
+    const portable = document.createElement("canvas");
+    portable.width = img.width;
+    portable.height = img.height;
+    const context = portable.getContext("2d")!;
+    context.fillStyle = "#fff";
+    context.fillRect(0, 0, portable.width, portable.height);
+    context.drawImage(img, 0, 0);
+    const portableImage = portable.toDataURL("image/png");
     this.image = img;
+    this.portableImage = portableImage;
     this.processed = processed;
     this.publish({
       scene,
@@ -381,9 +391,7 @@ export class Studio {
       const project = validateProject(data);
       let scene = project.scene;
       if (!scene) {
-        const r = await fetch("/scenes/" + project.sceneId + ".json");
-        if (!r.ok) throw new Error("Scene could not be loaded.");
-        scene = validateScene(await r.json());
+        throw new Error("This legacy variation needs private sample assets. Export a full project from the original lab instead.");
       }
       await this.commit(
         scene,
@@ -400,12 +408,16 @@ export class Studio {
     await this.restore(JSON.parse(await file.text()));
   }
   pack(): Project {
-    if (!this.state.scene) throw new Error("Load an image first.");
+    if (!this.state.scene || !this.image) throw new Error("Load an image first.");
+    // A project must survive moving to another machine or removing the library.
+    // Canonical white compositing matches the image-effects pipeline.
+    const scene = structuredClone(this.state.scene);
+    scene.image.src = this.portableImage;
     return {
       version: 2,
       rendererVersion: this.state.rendererVersion,
       effectVersion: EFFECT_VERSION,
-      scene: structuredClone(this.state.scene),
+      scene,
       settings: { ...this.state.settings },
       time: phaseAt(this.state.time, this.state.settings.duration),
     };
@@ -421,10 +433,15 @@ export class Studio {
     };
   }
   exportProject() {
+    const bytes = new Blob([JSON.stringify(this.pack(), null, 2)], {
+      type: "application/json",
+    });
+    if (bytes.size > 32_000_000) {
+      this.fail("Project exceeds 32 MB. Use a smaller source image to share it.");
+      return;
+    }
     download(
-      new Blob([JSON.stringify(this.pack(), null, 2)], {
-        type: "application/json",
-      }),
+      bytes,
       this.state.scene!.id + "-project.json",
     );
     this.setNotice("Project saved.");

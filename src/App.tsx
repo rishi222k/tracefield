@@ -17,6 +17,8 @@ import {
   ChevronDown,
   PanelLeft,
   Image as ImageIcon,
+  FileJson,
+  FolderOpen,
   Film,
   Pause,
   Play,
@@ -534,11 +536,18 @@ function App() {
       document.fonts.load('10px "Lab Serif Mono"'),
       document.fonts.load('13px "Geist Variable"'),
     ])
-      .then(() => fetch("/library/index.json"))
+      .then(async () => {
+        const local = await fetch("/library/index.local.json");
+        const response = local.status === 404 ? await fetch("/library/index.json") : local;
+        if (!response.ok) throw new Error("Image library could not be loaded.");
+        return response;
+      })
       .then((r) => r.json())
       .then((list: LibraryEntry[]) => {
         setEntries(list);
-        if (list[0]) return studio.loadScene(list[0].scene);
+        const requested = new URLSearchParams(location.search).get("scene");
+        const entry = list.find((item) => item.id === requested) ?? list[0];
+        if (entry) return studio.loadScene(entry.scene);
       })
       .catch((e) => studio.fail(e));
   }, []);
@@ -575,8 +584,15 @@ function App() {
     };
   }, []);
   const selected = state.scene?.nodes.find((n) => n.id === state.selected);
+  const projectInput = useRef<HTMLInputElement>(null);
   return (
     <div className="studio">
+      <input ref={projectInput} type="file" accept=".json,application/json" hidden
+        aria-label="Open saved project" onChange={(event) => {
+          const file = event.target.files?.[0];
+          if (file) studio.open(file).catch((error) => studio.fail(error));
+          event.target.value = "";
+        }} />
       <header className="topbar">
         <div className="topbar-left">
           {state.scene && (
@@ -594,20 +610,27 @@ function App() {
         <div className="topbar-right">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button size="sm" disabled={!state.scene || state.loading}>
+              <Button size="sm" disabled={state.loading}>
                 <ArrowDownToLine />
                 Export
                 <ChevronDown />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => studio.exportStill()}>
+              <DropdownMenuItem disabled={!state.scene} onClick={() => studio.exportStill()}>
                 <ImageIcon />
                 Image
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setExportOpen(true)}>
+              <DropdownMenuItem disabled={!state.scene} onClick={() => setExportOpen(true)}>
                 <Film />
                 Loop
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem disabled={!state.scene} onClick={() => studio.exportProject()}>
+                <FileJson /> Project
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => projectInput.current?.click()}>
+                <FolderOpen /> Open project
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

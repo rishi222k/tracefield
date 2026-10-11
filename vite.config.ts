@@ -3,7 +3,15 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "node:path";
 import { readFile, cp, mkdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
 const root = import.meta.dirname;
+const rootId = createHash("sha256").update(root).digest("hex").slice(0, 24);
+const health = (req: any, res: any, next: () => void) => {
+  if (req.url?.split("?")[0] !== "/__tracefield") return next();
+  res.setHeader("Content-Type", "application/json");
+  res.setHeader("Cache-Control", "no-store");
+  res.end(JSON.stringify({ app: "tracefield", rootId }));
+};
 const assetTypes: Record<string, string> = {
   ".png": "image/png",
   ".jpg": "image/jpeg",
@@ -18,6 +26,7 @@ export default defineConfig({
     {
       name: "preserved-scene-assets",
       configureServer(server) {
+        server.middlewares.use(health);
         server.middlewares.use(async (req, res, next) => {
           if (!req.url || !/^\/(assets|scenes|fonts|library)\//.test(req.url))
             return next();
@@ -47,6 +56,7 @@ export default defineConfig({
           }
         });
       },
+      configurePreviewServer(server) { server.middlewares.use(health); },
       async closeBundle() {
         await mkdir(path.join(root, "dist"), { recursive: true });
         await cp(path.join(root,"THIRD_PARTY_NOTICES.md"),path.join(root,"dist/THIRD_PARTY_NOTICES.md"));

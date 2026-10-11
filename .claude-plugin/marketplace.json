@@ -1,0 +1,16 @@
+{
+  "name": "tracefield",
+  "owner": {
+    "name": "Rishi Raghu"
+  },
+  "plugins": [
+    {
+      "name": "tracefield",
+      "source": "./plugins/tracefield",
+      "description": "A supplied photo becomes a subject-bound constellation study in an editable local studio."
+    }
+  ],
+  "metadata": {
+    "description": "A photo-to-studio workflow for subject-bound constellation overlays."
+  }
+}
