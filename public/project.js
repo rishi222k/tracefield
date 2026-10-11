@@ -6,6 +6,25 @@ import {
 } from "./settings.js";
 import { EFFECT_VERSION } from "./image-effects.js";
 
+// Read only the PNG header before a browser decoder can allocate the image.
+// Scene dimensions alone cannot bound an imported image's actual allocation.
+export function validateImageHeader(image) {
+  if (!image.src.startsWith("data:image/png;base64,")) return;
+  const encoded = image.src.slice("data:image/png;base64,".length, "data:image/png;base64,".length + 44);
+  let bytes;
+  try { bytes = Uint8Array.from(atob(encoded), (c) => c.charCodeAt(0)); }
+  catch { throw new Error("Invalid embedded PNG header."); }
+  const signature = [137, 80, 78, 71, 13, 10, 26, 10];
+  if (bytes.length < 24 || signature.some((v, i) => bytes[i] !== v) ||
+      String.fromCharCode(...bytes.slice(12, 16)) !== "IHDR")
+    throw new Error("Invalid embedded PNG header.");
+  const view = new DataView(bytes.buffer);
+  const width = view.getUint32(16), height = view.getUint32(20);
+  if (!width || !height || width > 4096 || height > 4096 ||
+      width !== image.width || height !== image.height)
+    throw new Error("Embedded image dimensions do not match the bounded scene.");
+}
+
 export function validateProject(data) {
   if (!data || ![1, 2].includes(data.version))
     throw new Error("Not a saved Tracefield project.");
@@ -34,8 +53,10 @@ export function validateProject(data) {
     throw new Error(
       "This project requires a different renderer/effect version.",
     );
+  const scene = validateScene(structuredClone(data.scene));
+  validateImageHeader(scene.image);
   return {
-    scene: validateScene(structuredClone(data.scene)),
+    scene,
     settings,
     time,
     rendererVersion: data.rendererVersion,

@@ -5,7 +5,7 @@ import {
   START_FRAME,
 } from "../../public/settings.js";
 import { EFFECT_VERSION, PROCESSED_STYLES } from "../../public/image-effects.js";
-import { validateProject } from "../../public/project.js";
+import { validateProject, validateImageHeader } from "../../public/project.js";
 import { render, makeXray } from "../../public/render.js";
 import { render as renderV2 } from "../../public/render-v2.js";
 import { render as renderV4 } from "../../public/render-v4.js";
@@ -341,6 +341,7 @@ export class Studio {
     time: number,
     rendererVersion = RENDERER_VERSION,
   ) {
+    validateImageHeader(scene.image);
     const img = new Image();
     img.src = scene.image.src;
     await img.decode();

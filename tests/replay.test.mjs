@@ -85,3 +85,12 @@ test('original version-2 projects preserve their renderer and paused frame',()=>
  const original=bundle();original.rendererVersion='node-network-renderer-v2';original.time=5.5;
  const restored=validateProject(original);assert.equal(restored.rendererVersion,'node-network-renderer-v2');assert.equal(restored.time,5.5);
 });
+
+test('embedded PNG dimensions are checked before browser decoding',()=>{
+ const header=Buffer.alloc(33);Buffer.from([137,80,78,71,13,10,26,10]).copy(header);header.writeUInt32BE(13,8);header.write('IHDR',12);header.writeUInt32BE(90000,16);header.writeUInt32BE(90000,20);
+ const p=bundle();p.scene.image.src='data:image/png;base64,'+header.toString('base64');
+ assert.throws(()=>validateProject(p),/bounded scene/);
+ header.writeUInt32BE(p.scene.image.width,16);header.writeUInt32BE(p.scene.image.height,20);p.scene.image.src='data:image/png;base64,'+header.toString('base64');
+ assert.equal(validateProject(p).scene.image.width,p.scene.image.width,'bounded header passes; browser still validates the full PNG');
+ p.scene.image.src='data:image/png;base64,AA==';assert.throws(()=>validateProject(p),/header/);
+});
