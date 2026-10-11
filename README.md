@@ -4,7 +4,7 @@
 
 The style is a **subject-bound constellation overlay**: a decorative node-link web anchored to the focal subject. Its targeting brackets, callouts and tracing motion belong to the visual language of HUDs and fictional interface design (FUI), as seen in [Jorge Almeida's interface work](https://jorgeonline.me/Iron-Man-2). Tracefield is the project's name, rather than a claim that this is a recognized historical style.
 
-> Release status: the first release is being prepared. The skill's default setup requires the `v0.1.0` Git tag; installation can be tested from the PR, but default runtime setup will fail until that tag is published after review and merge. Maintainer candidate testing uses an exact commit override.
+> Stable runtime setup fetches the `v0.1.0` Git tag. Before that tag is published, maintainer candidate testing uses an exact commit override; default setup reports the missing release explicitly.
 
 ## Use the skill
 
