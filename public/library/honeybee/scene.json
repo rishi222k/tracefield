@@ -1,0 +1,569 @@
+{
+  "version": 1,
+  "id": "honeybee",
+  "title": "Honeybee",
+  "subtitle": "Bee eye, wing veins, abdomen bands, pollen and legs; flower excluded.",
+  "analysis": {
+    "version": "tracefield-interpretation-v1",
+    "sourceSha256": "6800d078c6525a2d048302a9b653a4b728d5920299b087292c4615c2943053b7",
+    "type": "agent-authored",
+    "inputSha256": "c3e7ad2f62ae5b411abd01d6f622299c93fee2d5cf8b318e2c871f9cd6878410",
+    "ingestionVersion": "canonical-png-v1",
+    "proposalVersion": "feature-proposal-v3"
+  },
+  "image": {
+    "src": "/library/honeybee/image.png",
+    "width": 1026,
+    "height": 1533
+  },
+  "nodes": [
+    {
+      "id": "eye-1",
+      "x": 0.586,
+      "y": 0.367,
+      "label": "eye.01",
+      "kind": "observation",
+      "reason": "Dark eye center. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "wing-tip-1",
+      "x": 0.256,
+      "y": 0.285,
+      "label": "wing-tip.01",
+      "kind": "observation",
+      "reason": "Leftmost upper wing tip. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "wing-tip-2",
+      "x": 0.313,
+      "y": 0.272,
+      "label": "wing-tip.02",
+      "kind": "observation",
+      "reason": "Rear upper wing tip. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "wing-tip-3",
+      "x": 0.356,
+      "y": 0.336,
+      "label": "wing-tip.03",
+      "kind": "observation",
+      "reason": "Lower translucent wing edge. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "wing-vein-1",
+      "x": 0.331,
+      "y": 0.302,
+      "label": "wing-vein.01",
+      "kind": "observation",
+      "reason": "Wing vein junction near tip. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "wing-vein-2",
+      "x": 0.406,
+      "y": 0.317,
+      "label": "wing-vein.02",
+      "kind": "observation",
+      "reason": "Middle wing vein bend. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "wing-vein-3",
+      "x": 0.448,
+      "y": 0.328,
+      "label": "wing-vein.03",
+      "kind": "observation",
+      "reason": "Vein near wing root. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "thorax-1",
+      "x": 0.504,
+      "y": 0.343,
+      "label": "thorax.01",
+      "kind": "observation",
+      "reason": "Wing root on thorax. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "thorax-2",
+      "x": 0.509,
+      "y": 0.375,
+      "label": "thorax.02",
+      "kind": "observation",
+      "reason": "Hairy thorax center. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "thorax-3",
+      "x": 0.464,
+      "y": 0.359,
+      "label": "thorax.03",
+      "kind": "observation",
+      "reason": "Left thorax outline. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "thorax-4",
+      "x": 0.601,
+      "y": 0.347,
+      "label": "thorax.04",
+      "kind": "observation",
+      "reason": "Upper head hairs. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "abdomen-1",
+      "x": 0.367,
+      "y": 0.378,
+      "label": "abdomen.01",
+      "kind": "observation",
+      "reason": "Upper abdominal band. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "abdomen-2",
+      "x": 0.342,
+      "y": 0.407,
+      "label": "abdomen.02",
+      "kind": "observation",
+      "reason": "Middle dark abdominal band. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "abdomen-3",
+      "x": 0.33,
+      "y": 0.445,
+      "label": "abdomen.03",
+      "kind": "observation",
+      "reason": "Lower dark band. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "abdomen-4",
+      "x": 0.35,
+      "y": 0.473,
+      "label": "abdomen.04",
+      "kind": "observation",
+      "reason": "Pointed abdomen end. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "leg-1",
+      "x": 0.472,
+      "y": 0.388,
+      "label": "leg.01",
+      "kind": "observation",
+      "reason": "Near upper leg joint. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "leg-2",
+      "x": 0.496,
+      "y": 0.426,
+      "label": "leg.02",
+      "kind": "observation",
+      "reason": "Near lower leg joint. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "leg-3",
+      "x": 0.526,
+      "y": 0.452,
+      "label": "leg.03",
+      "kind": "observation",
+      "reason": "Near leg end. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "leg-4",
+      "x": 0.615,
+      "y": 0.397,
+      "label": "leg.04",
+      "kind": "observation",
+      "reason": "Front leg bend. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "leg-5",
+      "x": 0.613,
+      "y": 0.457,
+      "label": "leg.05",
+      "kind": "observation",
+      "reason": "Front leg lower end. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "leg-6",
+      "x": 0.437,
+      "y": 0.469,
+      "label": "leg.06",
+      "kind": "observation",
+      "reason": "Rear lower leg end. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "pollen-1",
+      "x": 0.41,
+      "y": 0.434,
+      "label": "pollen.01",
+      "kind": "observation",
+      "reason": "Visible yellow pollen load. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    }
+  ],
+  "networks": {
+    "constellation": {
+      "title": "Constellation",
+      "meaning": "Decorative subject-bound geometric web.",
+      "edges": [
+        {
+          "a": "wing-tip-1",
+          "b": "wing-tip-2",
+          "reason": "wing-tip.01 → wing-tip.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9674
+        },
+        {
+          "a": "wing-tip-2",
+          "b": "wing-vein-1",
+          "reason": "wing-tip.02 → wing-vein.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9837
+        },
+        {
+          "a": "wing-vein-1",
+          "b": "wing-vein-2",
+          "reason": "wing-vein.01 → wing-vein.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6128
+        },
+        {
+          "a": "wing-tip-3",
+          "b": "wing-vein-1",
+          "reason": "wing-tip.03 → wing-vein.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-vein-2",
+          "b": "wing-vein-3",
+          "reason": "wing-vein.02 → wing-vein.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-tip-3",
+          "b": "wing-vein-2",
+          "reason": "wing-tip.03 → wing-vein.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-vein-3",
+          "b": "thorax-1",
+          "reason": "wing-vein.03 → thorax.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6548
+        },
+        {
+          "a": "wing-vein-3",
+          "b": "thorax-3",
+          "reason": "wing-vein.03 → thorax.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-tip-3",
+          "b": "abdomen-1",
+          "reason": "wing-tip.03 → abdomen.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "thorax-1",
+          "b": "thorax-3",
+          "reason": "thorax.01 → thorax.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.8901
+        },
+        {
+          "a": "eye-1",
+          "b": "thorax-1",
+          "reason": "eye.01 → thorax.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6176
+        },
+        {
+          "a": "thorax-1",
+          "b": "thorax-2",
+          "reason": "thorax.01 → thorax.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.8605
+        },
+        {
+          "a": "eye-1",
+          "b": "thorax-4",
+          "reason": "eye.01 → thorax.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "thorax-2",
+          "b": "thorax-3",
+          "reason": "thorax.02 → thorax.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6909
+        },
+        {
+          "a": "thorax-3",
+          "b": "abdomen-1",
+          "reason": "thorax.03 → abdomen.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7799
+        },
+        {
+          "a": "thorax-3",
+          "b": "leg-1",
+          "reason": "thorax.03 → leg.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "eye-1",
+          "b": "thorax-2",
+          "reason": "eye.01 → thorax.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "eye-1",
+          "b": "leg-4",
+          "reason": "eye.01 → leg.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "thorax-2",
+          "b": "leg-1",
+          "reason": "thorax.02 → leg.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "abdomen-1",
+          "b": "leg-1",
+          "reason": "abdomen.01 → leg.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6611
+        },
+        {
+          "a": "abdomen-1",
+          "b": "abdomen-2",
+          "reason": "abdomen.01 → abdomen.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "leg-1",
+          "b": "leg-2",
+          "reason": "leg.01 → leg.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "leg-1",
+          "b": "pollen-1",
+          "reason": "leg.01 → pollen.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7148
+        },
+        {
+          "a": "leg-2",
+          "b": "leg-4",
+          "reason": "leg.02 → leg.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6465
+        },
+        {
+          "a": "leg-3",
+          "b": "leg-4",
+          "reason": "leg.03 → leg.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6139
+        },
+        {
+          "a": "leg-4",
+          "b": "leg-5",
+          "reason": "leg.04 → leg.05: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "abdomen-2",
+          "b": "pollen-1",
+          "reason": "abdomen.02 → pollen.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.8568
+        },
+        {
+          "a": "abdomen-2",
+          "b": "abdomen-3",
+          "reason": "abdomen.02 → abdomen.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "leg-2",
+          "b": "pollen-1",
+          "reason": "leg.02 → pollen.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.8083
+        },
+        {
+          "a": "leg-2",
+          "b": "leg-3",
+          "reason": "leg.02 → leg.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "leg-2",
+          "b": "leg-6",
+          "reason": "leg.02 → leg.06: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7921
+        },
+        {
+          "a": "abdomen-3",
+          "b": "pollen-1",
+          "reason": "abdomen.03 → pollen.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7558
+        },
+        {
+          "a": "leg-6",
+          "b": "pollen-1",
+          "reason": "leg.06 → pollen.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "abdomen-4",
+          "b": "pollen-1",
+          "reason": "abdomen.04 → pollen.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7474
+        },
+        {
+          "a": "abdomen-3",
+          "b": "abdomen-4",
+          "reason": "abdomen.03 → abdomen.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "leg-3",
+          "b": "leg-5",
+          "reason": "leg.03 → leg.05: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "leg-3",
+          "b": "leg-6",
+          "reason": "leg.03 → leg.06: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6863
+        },
+        {
+          "a": "abdomen-4",
+          "b": "leg-6",
+          "reason": "abdomen.04 → leg.06: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7402
+        }
+      ]
+    },
+    "structure": {
+      "title": "Structure",
+      "meaning": "Unused; no measured relationship claimed.",
+      "edges": []
+    },
+    "pattern": {
+      "title": "Pattern",
+      "meaning": "Unused; no measured relationship claimed.",
+      "edges": []
+    }
+  },
+  "rules": {
+    "roles": [
+      {
+        "role": "eye",
+        "rule": "Visible dark compound-eye surface."
+      },
+      {
+        "role": "wing-tip",
+        "rule": "Visible transparent wing extremity."
+      },
+      {
+        "role": "wing-vein",
+        "rule": "Visible junction or bend of a wing vein."
+      },
+      {
+        "role": "thorax",
+        "rule": "Visible hairy thorax contour or wing junction."
+      },
+      {
+        "role": "abdomen",
+        "rule": "Visible abdominal band or lower tip."
+      },
+      {
+        "role": "leg",
+        "rule": "Visible leg joint or extremity."
+      },
+      {
+        "role": "pollen",
+        "rule": "Visible yellow pollen load on a leg."
+      }
+    ],
+    "link": "Decorative subject-bound neighbours with empty diametral circles, a narrow image-saliency envelope and shortest bridges between disconnected subject parts; no measured or semantic relationships."
+  },
+  "focus": [
+    "eye-1",
+    "thorax-2"
+  ],
+  "observations": []
+}

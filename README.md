@@ -4,7 +4,7 @@
 
 The style is a **subject-bound constellation overlay**: a decorative node-link web anchored to the focal subject. Its targeting brackets, callouts and tracing motion belong to the visual language of HUDs and fictional interface design (FUI), as seen in [Jorge Almeida's interface work](https://jorgeonline.me/Iron-Man-2). Tracefield is the project's name, rather than a claim that this is a recognized historical style.
 
-> Stable runtime setup fetches the `v0.1.0` Git tag. Before that tag is published, maintainer candidate testing uses an exact commit override; default setup reports the missing release explicitly.
+> Stable runtime setup fetches the published, immutable `v0.1.0` Git tag. The source gallery below is a later contribution; using the stable skill does not silently change an existing lab or add demo images.
 
 ## Use the skill
 
@@ -47,7 +47,24 @@ The approved studio has a neutral dark workspace, collapsible image rail, **Orig
 - **Timeline:** play, restart, scrub, loop length and speed; the v3 Trace loop defaults to 2×.
 - **Export:** Image, Loop, Project and Open project. Opening a saved project works even when the library is empty.
 
-There is no photo upload inside the studio. The agent adds images and authors the rule set; browser controls change presentation without changing those decisions. This repository intentionally ships **no demo photos**. The empty studio becomes useful when the skill adds your first image.
+There is no photo upload inside the studio. The agent adds images and authors the rule set; browser controls change presentation without changing those decisions. The current source gallery includes six contributed generated examples. Your own photos still enter through the skill. Published runtime `v0.1.0` retains its original empty library; it is immutable and is not silently updated by a newer source checkout.
+
+## Gallery examples
+
+The gallery includes **Marble Study, Tree Frog, Painted Lady, Swallowtail, Honeybee and Black Horse**. Each has 20–23 authored visible-detail anchors and a saved decorative web. The generator was reported by the contributor as GPT 6; the files are generated illustrations, not wildlife records or documentary photographs.
+
+| Example | Supplied resolution | Anchors |
+| --- | --- | --- |
+| Marble Study | 940 × 1673 | 22 |
+| Tree Frog | 1086 × 1448 | 20 |
+| Painted Lady | 1126 × 1397 | 21 |
+| Swallowtail | 1086 × 1448 | 22 |
+| Honeybee | 1026 × 1533 | 22 |
+| Black Horse | 1024 × 1536 | 23 |
+
+The supplied files are below 4K; exports preserve their canonical resolution. No upscaling is claimed. [Demo provenance](public/demo-assets.json) and [CC0 dedication](DEMO_IMAGES_LICENSE.md) cover only these six studies. Other local library files remain ignored and private by default.
+
+Clone the current source and run `npm ci` followed by `npm run lab -- --scene honeybee` to browse them. The skill's pinned `v0.1.0` runtime can ingest supplied copies using its normal workflow, as exercised in the six-image acceptance test. A future gallery runtime needs its own reviewed release tag.
 
 ## Repeatability
 
@@ -80,7 +97,7 @@ npm run lab -- --scene photo
 
 `npm run lab` verifies the checkout's server identity and selects a free loopback port in 4318–4418; it never reuses an unrelated app. `npm start -- --port 4319` runs a foreground development server. `npm run build` creates a static local build; `npm run preview -- --port 4319` serves it. Building includes your local library, so a build containing personal studies needs the same sharing permission as those studies.
 
-Images, projects and exports stay in the local renderer. The agent's image inspection follows its host provider's privacy settings. Local library files are ignored by Git, and the tracked starter library stays empty. No analytics or remote rendering is included.
+Images, projects and exports stay in the local renderer. The agent's image inspection follows its host provider's privacy settings. Personal library files are ignored by Git; only the six documented demo studies are tracked. No analytics or remote rendering is included.
 
 ## Export formats
 
@@ -103,6 +120,6 @@ The source is a clean continuation of the private Node Network Animation experim
 
 ## License
 
-Original code, skill instructions and helpers are **MIT licensed**. Bundled third-party source and fonts retain their licenses: [third-party notices](THIRD_PARTY_NOTICES.md), [font notices](public/fonts/) and [asset provenance](references.md). Your images and exports retain their own rights; the code license does not grant rights to them. Future public demo assets need source, creator and redistribution-license details.
+Original code, skill instructions and helpers are **MIT licensed**. The six contributed gallery images and saved demo studies are **CC0-1.0**; see [their dedication](DEMO_IMAGES_LICENSE.md). Bundled third-party source and fonts retain their licenses: [third-party notices](THIRD_PARTY_NOTICES.md), [font notices](public/fonts/) and [asset provenance](references.md). Your images and exports retain their own rights; the code license does not grant rights to them. Future public demo assets need source, creator and redistribution-license details.
 
 See [Contributing](CONTRIBUTING.md) and [Security](SECURITY.md).

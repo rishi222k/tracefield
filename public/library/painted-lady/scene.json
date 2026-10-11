@@ -1,0 +1,503 @@
+{
+  "version": 1,
+  "id": "painted-lady",
+  "title": "Painted Lady",
+  "subtitle": "Wing edges, eyespots, pale markings and antennae; flower excluded.",
+  "analysis": {
+    "version": "tracefield-interpretation-v1",
+    "sourceSha256": "01b18d50e8c011fac5ea90f7c2be1e373a4662acb19b6eea3d1db53bee497716",
+    "type": "agent-authored",
+    "inputSha256": "4aef01698dfde5db482dc436c11e95fea55379a767cb10d9301825b98cefe87c",
+    "ingestionVersion": "canonical-png-v1",
+    "proposalVersion": "feature-proposal-v3"
+  },
+  "image": {
+    "src": "/library/painted-lady/image.png",
+    "width": 1126,
+    "height": 1397
+  },
+  "nodes": [
+    {
+      "id": "wing-edge-1",
+      "x": 0.305,
+      "y": 0.118,
+      "label": "wing-edge.01",
+      "kind": "observation",
+      "reason": "Upper wing tip. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "wing-edge-2",
+      "x": 0.232,
+      "y": 0.273,
+      "label": "wing-edge.02",
+      "kind": "observation",
+      "reason": "Left upper wing boundary. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "wing-edge-3",
+      "x": 0.136,
+      "y": 0.478,
+      "label": "wing-edge.03",
+      "kind": "observation",
+      "reason": "Left hindwing tip. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "wing-edge-4",
+      "x": 0.327,
+      "y": 0.585,
+      "label": "wing-edge.04",
+      "kind": "observation",
+      "reason": "Lower hindwing corner. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "wing-edge-5",
+      "x": 0.48,
+      "y": 0.365,
+      "label": "wing-edge.05",
+      "kind": "observation",
+      "reason": "Right upper wing boundary. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "eyespot-1",
+      "x": 0.22,
+      "y": 0.423,
+      "label": "eyespot.01",
+      "kind": "observation",
+      "reason": "Upper hindwing eyespot. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "eyespot-2",
+      "x": 0.207,
+      "y": 0.507,
+      "label": "eyespot.02",
+      "kind": "observation",
+      "reason": "Lower hindwing eyespot. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "eyespot-3",
+      "x": 0.21,
+      "y": 0.447,
+      "label": "eyespot.03",
+      "kind": "observation",
+      "reason": "Small middle dark spot. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "pale-mark-1",
+      "x": 0.32,
+      "y": 0.165,
+      "label": "pale-mark.01",
+      "kind": "observation",
+      "reason": "Top cream spot. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "pale-mark-2",
+      "x": 0.302,
+      "y": 0.19,
+      "label": "pale-mark.02",
+      "kind": "observation",
+      "reason": "Second cream spot. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "pale-mark-3",
+      "x": 0.301,
+      "y": 0.221,
+      "label": "pale-mark.03",
+      "kind": "observation",
+      "reason": "Large cream patch. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "pale-mark-4",
+      "x": 0.386,
+      "y": 0.23,
+      "label": "pale-mark.04",
+      "kind": "observation",
+      "reason": "Right cream patch. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "pale-mark-5",
+      "x": 0.386,
+      "y": 0.41,
+      "label": "pale-mark.05",
+      "kind": "observation",
+      "reason": "Pale inner hindwing patch. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "wing-root-1",
+      "x": 0.499,
+      "y": 0.456,
+      "label": "wing-root.01",
+      "kind": "observation",
+      "reason": "Wing junction near thorax. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "wing-root-2",
+      "x": 0.447,
+      "y": 0.512,
+      "label": "wing-root.02",
+      "kind": "observation",
+      "reason": "Lower wing junction. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "eye-1",
+      "x": 0.554,
+      "y": 0.437,
+      "label": "eye.01",
+      "kind": "observation",
+      "reason": "Visible butterfly eye. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "antenna-1",
+      "x": 0.688,
+      "y": 0.313,
+      "label": "antenna.01",
+      "kind": "observation",
+      "reason": "Left antenna club. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "antenna-2",
+      "x": 0.703,
+      "y": 0.319,
+      "label": "antenna.02",
+      "kind": "observation",
+      "reason": "Right antenna club. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "body-1",
+      "x": 0.488,
+      "y": 0.484,
+      "label": "body.01",
+      "kind": "observation",
+      "reason": "Furry lower thorax. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "body-2",
+      "x": 0.418,
+      "y": 0.519,
+      "label": "body.02",
+      "kind": "observation",
+      "reason": "Abdomen edge. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "body-3",
+      "x": 0.546,
+      "y": 0.506,
+      "label": "body.03",
+      "kind": "observation",
+      "reason": "Visible front leg bend. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    }
+  ],
+  "networks": {
+    "constellation": {
+      "title": "Constellation",
+      "meaning": "Decorative subject-bound geometric web.",
+      "edges": [
+        {
+          "a": "wing-edge-1",
+          "b": "pale-mark-1",
+          "reason": "wing-edge.01 → pale-mark.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "pale-mark-1",
+          "b": "pale-mark-2",
+          "reason": "pale-mark.01 → pale-mark.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "pale-mark-2",
+          "b": "pale-mark-3",
+          "reason": "pale-mark.02 → pale-mark.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "pale-mark-3",
+          "b": "pale-mark-4",
+          "reason": "pale-mark.03 → pale-mark.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-edge-2",
+          "b": "pale-mark-3",
+          "reason": "wing-edge.02 → pale-mark.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-edge-5",
+          "b": "pale-mark-4",
+          "reason": "wing-edge.05 → pale-mark.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-edge-2",
+          "b": "pale-mark-5",
+          "reason": "wing-edge.02 → pale-mark.05: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6437
+        },
+        {
+          "a": "wing-edge-2",
+          "b": "eyespot-1",
+          "reason": "wing-edge.02 → eyespot.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "antenna-1",
+          "b": "antenna-2",
+          "reason": "antenna.01 → antenna.02: Bridge: the shortest neighbour link joining two separate parts of the subject.",
+          "weight": 0.3
+        },
+        {
+          "a": "eye-1",
+          "b": "antenna-1",
+          "reason": "eye.01 → antenna.01: Bridge: the shortest neighbour link joining two separate parts of the subject.",
+          "weight": 0.3
+        },
+        {
+          "a": "wing-edge-5",
+          "b": "pale-mark-5",
+          "reason": "wing-edge.05 → pale-mark.05: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9811
+        },
+        {
+          "a": "wing-edge-5",
+          "b": "eye-1",
+          "reason": "wing-edge.05 → eye.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7332
+        },
+        {
+          "a": "wing-edge-5",
+          "b": "wing-root-1",
+          "reason": "wing-edge.05 → wing-root.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.8451
+        },
+        {
+          "a": "eyespot-1",
+          "b": "pale-mark-5",
+          "reason": "eyespot.01 → pale-mark.05: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "pale-mark-5",
+          "b": "wing-root-1",
+          "reason": "pale-mark.05 → wing-root.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7208
+        },
+        {
+          "a": "pale-mark-5",
+          "b": "wing-root-2",
+          "reason": "pale-mark.05 → wing-root.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6688
+        },
+        {
+          "a": "pale-mark-5",
+          "b": "body-2",
+          "reason": "pale-mark.05 → body.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7185
+        },
+        {
+          "a": "eyespot-1",
+          "b": "eyespot-3",
+          "reason": "eyespot.01 → eyespot.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-root-1",
+          "b": "eye-1",
+          "reason": "wing-root.01 → eye.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "eye-1",
+          "b": "body-3",
+          "reason": "eye.01 → body.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6131
+        },
+        {
+          "a": "wing-edge-3",
+          "b": "eyespot-3",
+          "reason": "wing-edge.03 → eyespot.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7597
+        },
+        {
+          "a": "eyespot-2",
+          "b": "eyespot-3",
+          "reason": "eyespot.02 → eyespot.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9154
+        },
+        {
+          "a": "wing-root-1",
+          "b": "body-1",
+          "reason": "wing-root.01 → body.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9837
+        },
+        {
+          "a": "wing-edge-3",
+          "b": "eyespot-2",
+          "reason": "wing-edge.03 → eyespot.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.8504
+        },
+        {
+          "a": "body-1",
+          "b": "body-3",
+          "reason": "body.01 → body.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.8861
+        },
+        {
+          "a": "wing-root-2",
+          "b": "body-1",
+          "reason": "wing-root.02 → body.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-edge-4",
+          "b": "eyespot-2",
+          "reason": "wing-edge.04 → eyespot.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9444
+        },
+        {
+          "a": "wing-root-2",
+          "b": "body-2",
+          "reason": "wing-root.02 → body.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-edge-4",
+          "b": "body-2",
+          "reason": "wing-edge.04 → body.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        }
+      ]
+    },
+    "structure": {
+      "title": "Structure",
+      "meaning": "Unused; no measured relationship claimed.",
+      "edges": []
+    },
+    "pattern": {
+      "title": "Pattern",
+      "meaning": "Unused; no measured relationship claimed.",
+      "edges": []
+    }
+  },
+  "rules": {
+    "roles": [
+      {
+        "role": "wing-edge",
+        "rule": "Visible extremity or turn of the butterfly wing outline."
+      },
+      {
+        "role": "eyespot",
+        "rule": "Center of a visible round dark wing marking."
+      },
+      {
+        "role": "pale-mark",
+        "rule": "Center of a visible cream wing patch."
+      },
+      {
+        "role": "wing-root",
+        "rule": "Visible junction of wing and body."
+      },
+      {
+        "role": "eye",
+        "rule": "Visible eye on the butterfly head."
+      },
+      {
+        "role": "antenna",
+        "rule": "Visible clubbed antenna tip."
+      },
+      {
+        "role": "body",
+        "rule": "Visible body or leg detail on the butterfly."
+      }
+    ],
+    "link": "Decorative subject-bound neighbours with empty diametral circles, a narrow image-saliency envelope and shortest bridges between disconnected subject parts; no measured or semantic relationships."
+  },
+  "focus": [
+    "eye-1",
+    "wing-root-1"
+  ],
+  "observations": []
+}

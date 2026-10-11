@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "marble-study",
+      "title": "Marble Study",
+      "contributor": "Rishi Raghu",
+      "source": "User-supplied generated output for the public Tracefield gallery, 2026-10-11",
+      "sourceName": "Dramatic Marble Statue Portrait.png",
+      "generator": "GPT 6 (reported by contributor)",
+      "license": "CC0-1.0",
+      "width": 940,
+      "height": 1673,
+      "inputSha256": "d193522fe11ea8125458f1263411f834bb0d49c46a43514209e8c6572f4fb806",
+      "modifications": "Metadata stripped; transparency white-composited by canonical-png-v1. No resizing, cropping or generated replacement. Agent-authored scene anchors and decorative links added separately.",
+      "files": [
+        {
+          "path": "public/library/marble-study/image.png",
+          "sha256": "780cda1fb7a42a7018402fc8e753d3021e00d379b3426b26b8d3c5c06b76db8b"
+        },
+        {
+          "path": "public/library/marble-study/scene.json",
+          "sha256": "24c15cb4c43838b823fe54d0d7967645708c7958651cc0d0b63a26e9adfa378b"
+        }
+      ]
+    },
+    {
+      "id": "tree-frog",
+      "title": "Tree Frog",
+      "contributor": "Rishi Raghu",
+      "source": "User-supplied generated output for the public Tracefield gallery, 2026-10-11",
+      "sourceName": "Red-Eyed Tree Frog in Sunlit Moss.png",
+      "generator": "GPT 6 (reported by contributor)",
+      "license": "CC0-1.0",
+      "width": 1086,
+      "height": 1448,
+      "inputSha256": "74e0a81d88e09f06cd055d82d61c4505eab23206a91dd5681f05db177b5e425b",
+      "modifications": "Metadata stripped; transparency white-composited by canonical-png-v1. No resizing, cropping or generated replacement. Agent-authored scene anchors and decorative links added separately.",
+      "files": [
+        {
+          "path": "public/library/tree-frog/image.png",
+          "sha256": "591a6b3efe0ad062740e127cc18791a981fa4e83d71e956f1bfa006ce763d8c3"
+        },
+        {
+          "path": "public/library/tree-frog/scene.json",
+          "sha256": "3b4d4a29ce115d2c65b322da84190df763a6c307c81db61fa7e99211396609c4"
+        }
+      ]
+    },
+    {
+      "id": "painted-lady",
+      "title": "Painted Lady",
+      "contributor": "Rishi Raghu",
+      "source": "User-supplied generated output for the public Tracefield gallery, 2026-10-11",
+      "sourceName": "Painted Lady on an Orange Cosmos.png",
+      "generator": "GPT 6 (reported by contributor)",
+      "license": "CC0-1.0",
+      "width": 1126,
+      "height": 1397,
+      "inputSha256": "4aef01698dfde5db482dc436c11e95fea55379a767cb10d9301825b98cefe87c",
+      "modifications": "Metadata stripped; transparency white-composited by canonical-png-v1. No resizing, cropping or generated replacement. Agent-authored scene anchors and decorative links added separately.",
+      "files": [
+        {
+          "path": "public/library/painted-lady/image.png",
+          "sha256": "01b18d50e8c011fac5ea90f7c2be1e373a4662acb19b6eea3d1db53bee497716"
+        },
+        {
+          "path": "public/library/painted-lady/scene.json",
+          "sha256": "37b6b527d39812e31f448e676ba09fcb16207645150e393a46196f725ae0975b"
+        }
+      ]
+    },
+    {
+      "id": "swallowtail",
+      "title": "Swallowtail",
+      "contributor": "Rishi Raghu",
+      "source": "User-supplied generated output for the public Tracefield gallery, 2026-10-11",
+      "sourceName": "Swallowtail on Purple Thistles.png",
+      "generator": "GPT 6 (reported by contributor)",
+      "license": "CC0-1.0",
+      "width": 1086,
+      "height": 1448,
+      "inputSha256": "037bcaee51c5a12f0cd20e9b5556a996e2626904dcc28853ba2e26de3aa7cb0b",
+      "modifications": "Metadata stripped; transparency white-composited by canonical-png-v1. No resizing, cropping or generated replacement. Agent-authored scene anchors and decorative links added separately.",
+      "files": [
+        {
+          "path": "public/library/swallowtail/image.png",
+          "sha256": "0badc74872d1170a4b491291044187fe85bef305ac539d63b92dd76ee54a729f"
+        },
+        {
+          "path": "public/library/swallowtail/scene.json",
+          "sha256": "85cc604e522c7f3f03e0eac361eb51a475417a71fa35ee3ca151bb7ef1cdb2b7"
+        }
+      ]
+    },
+    {
+      "id": "honeybee",
+      "title": "Honeybee",
+      "contributor": "Rishi Raghu",
+      "source": "User-supplied generated output for the public Tracefield gallery, 2026-10-11",
+      "sourceName": "Golden Honeybee on Wildflower.png",
+      "generator": "GPT 6 (reported by contributor)",
+      "license": "CC0-1.0",
+      "width": 1026,
+      "height": 1533,
+      "inputSha256": "c3e7ad2f62ae5b411abd01d6f622299c93fee2d5cf8b318e2c871f9cd6878410",
+      "modifications": "Metadata stripped; transparency white-composited by canonical-png-v1. No resizing, cropping or generated replacement. Agent-authored scene anchors and decorative links added separately.",
+      "files": [
+        {
+          "path": "public/library/honeybee/image.png",
+          "sha256": "6800d078c6525a2d048302a9b653a4b728d5920299b087292c4615c2943053b7"
+        },
+        {
+          "path": "public/library/honeybee/scene.json",
+          "sha256": "f5502bdcb33eb1b5c99250b2c2036e988f8c59a4fbe7f56466309539a37494a8"
+        }
+      ]
+    },
+    {
+      "id": "black-horse",
+      "title": "Black Horse",
+      "contributor": "Rishi Raghu",
+      "source": "User-supplied generated output for the public Tracefield gallery, 2026-10-11",
+      "sourceName": "Majestic Black Horse at Golden Hour.png",
+      "generator": "GPT 6 (reported by contributor)",
+      "license": "CC0-1.0",
+      "width": 1024,
+      "height": 1536,
+      "inputSha256": "2d6b8897ba0cfb7a10f3f2865eae1037c2befea27aa9a2f548ac5abea38c6aff",
+      "modifications": "Metadata stripped; transparency white-composited by canonical-png-v1. No resizing, cropping or generated replacement. Agent-authored scene anchors and decorative links added separately.",
+      "files": [
+        {
+          "path": "public/library/black-horse/image.png",
+          "sha256": "547b5d6b8af5437918767537827862e58de1a8b462e8fe0d010b594254d87bef"
+        },
+        {
+          "path": "public/library/black-horse/scene.json",
+          "sha256": "30fd7f422bc0439b00ee15a18cc3a2daa06c1ff37f8f2b1e499da21a30500661"
+        }
+      ]
+    }
+  ]
+}

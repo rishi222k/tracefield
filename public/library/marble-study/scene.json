@@ -1,0 +1,551 @@
+{
+  "version": 1,
+  "id": "marble-study",
+  "title": "Marble Study",
+  "subtitle": "Carved curls, facial edges, neck and raised hand; architecture excluded.",
+  "analysis": {
+    "version": "tracefield-interpretation-v1",
+    "sourceSha256": "780cda1fb7a42a7018402fc8e753d3021e00d379b3426b26b8d3c5c06b76db8b",
+    "type": "agent-authored",
+    "inputSha256": "d193522fe11ea8125458f1263411f834bb0d49c46a43514209e8c6572f4fb806",
+    "ingestionVersion": "canonical-png-v1",
+    "proposalVersion": "feature-proposal-v3"
+  },
+  "image": {
+    "src": "/library/marble-study/image.png",
+    "width": 940,
+    "height": 1673
+  },
+  "nodes": [
+    {
+      "id": "curl-1",
+      "x": 0.468,
+      "y": 0.263,
+      "label": "curl.01",
+      "kind": "observation",
+      "reason": "Central spiral curl. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "curl-2",
+      "x": 0.59,
+      "y": 0.238,
+      "label": "curl.02",
+      "kind": "observation",
+      "reason": "Curl above the forehead. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "curl-3",
+      "x": 0.694,
+      "y": 0.257,
+      "label": "curl.03",
+      "kind": "observation",
+      "reason": "Right crown curl. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "curl-4",
+      "x": 0.34,
+      "y": 0.304,
+      "label": "curl.04",
+      "kind": "observation",
+      "reason": "Left upper curl. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "curl-5",
+      "x": 0.243,
+      "y": 0.355,
+      "label": "curl.05",
+      "kind": "observation",
+      "reason": "Left temple curl. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "curl-6",
+      "x": 0.252,
+      "y": 0.475,
+      "label": "curl.06",
+      "kind": "observation",
+      "reason": "Lower curl beside the neck. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "curl-7",
+      "x": 0.667,
+      "y": 0.219,
+      "label": "curl.07",
+      "kind": "observation",
+      "reason": "Topmost carved curl. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "eye-1",
+      "x": 0.555,
+      "y": 0.364,
+      "label": "eye.01",
+      "kind": "observation",
+      "reason": "Near carved iris. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "eye-2",
+      "x": 0.689,
+      "y": 0.384,
+      "label": "eye.02",
+      "kind": "observation",
+      "reason": "Far eye opening. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "nose-1",
+      "x": 0.66,
+      "y": 0.411,
+      "label": "nose.01",
+      "kind": "observation",
+      "reason": "Projecting nose tip. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "nose-2",
+      "x": 0.615,
+      "y": 0.429,
+      "label": "nose.02",
+      "kind": "observation",
+      "reason": "Near nostril edge. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "lip-1",
+      "x": 0.563,
+      "y": 0.456,
+      "label": "lip.01",
+      "kind": "observation",
+      "reason": "Left corner of lips. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "lip-2",
+      "x": 0.637,
+      "y": 0.465,
+      "label": "lip.02",
+      "kind": "observation",
+      "reason": "Lower lip contour. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "face-edge-1",
+      "x": 0.291,
+      "y": 0.392,
+      "label": "face-edge.01",
+      "kind": "observation",
+      "reason": "Inner ear opening. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "face-edge-2",
+      "x": 0.321,
+      "y": 0.423,
+      "label": "face-edge.02",
+      "kind": "observation",
+      "reason": "Lower ear boundary. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "face-edge-3",
+      "x": 0.628,
+      "y": 0.51,
+      "label": "face-edge.03",
+      "kind": "observation",
+      "reason": "Chin contour. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "neck-1",
+      "x": 0.363,
+      "y": 0.584,
+      "label": "neck.01",
+      "kind": "observation",
+      "reason": "Left neck shadow contour. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "neck-2",
+      "x": 0.593,
+      "y": 0.585,
+      "label": "neck.02",
+      "kind": "observation",
+      "reason": "Right neck contour. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "neck-3",
+      "x": 0.445,
+      "y": 0.701,
+      "label": "neck.03",
+      "kind": "observation",
+      "reason": "Central clavicle turn. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "hand-1",
+      "x": 0.697,
+      "y": 0.555,
+      "label": "hand.01",
+      "kind": "observation",
+      "reason": "Raised fingertip contour. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "hand-2",
+      "x": 0.81,
+      "y": 0.582,
+      "label": "hand.02",
+      "kind": "observation",
+      "reason": "Raised knuckle contour. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "hand-3",
+      "x": 0.896,
+      "y": 0.668,
+      "label": "hand.03",
+      "kind": "observation",
+      "reason": "Outer wrist contour. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        -18
+      ]
+    }
+  ],
+  "networks": {
+    "constellation": {
+      "title": "Constellation",
+      "meaning": "Decorative subject-bound geometric web.",
+      "edges": [
+        {
+          "a": "curl-2",
+          "b": "curl-7",
+          "reason": "curl.02 → curl.07: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "curl-3",
+          "b": "curl-7",
+          "reason": "curl.03 → curl.07: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "curl-2",
+          "b": "curl-3",
+          "reason": "curl.02 → curl.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.608
+        },
+        {
+          "a": "curl-1",
+          "b": "curl-2",
+          "reason": "curl.01 → curl.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "curl-2",
+          "b": "eye-1",
+          "reason": "curl.02 → eye.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.637
+        },
+        {
+          "a": "curl-3",
+          "b": "eye-1",
+          "reason": "curl.03 → eye.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6978
+        },
+        {
+          "a": "curl-3",
+          "b": "eye-2",
+          "reason": "curl.03 → eye.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9225
+        },
+        {
+          "a": "curl-1",
+          "b": "curl-4",
+          "reason": "curl.01 → curl.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "curl-1",
+          "b": "eye-1",
+          "reason": "curl.01 → eye.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9769
+        },
+        {
+          "a": "curl-4",
+          "b": "curl-5",
+          "reason": "curl.04 → curl.05: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "curl-4",
+          "b": "eye-1",
+          "reason": "curl.04 → eye.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6198
+        },
+        {
+          "a": "curl-5",
+          "b": "face-edge-1",
+          "reason": "curl.05 → face-edge.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "eye-1",
+          "b": "eye-2",
+          "reason": "eye.01 → eye.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6886
+        },
+        {
+          "a": "eye-1",
+          "b": "nose-1",
+          "reason": "eye.01 → nose.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6973
+        },
+        {
+          "a": "eye-1",
+          "b": "face-edge-2",
+          "reason": "eye.01 → face-edge.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7388
+        },
+        {
+          "a": "eye-1",
+          "b": "nose-2",
+          "reason": "eye.01 → nose.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.8944
+        },
+        {
+          "a": "eye-2",
+          "b": "nose-1",
+          "reason": "eye.02 → nose.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "face-edge-1",
+          "b": "face-edge-2",
+          "reason": "face-edge.01 → face-edge.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "nose-1",
+          "b": "nose-2",
+          "reason": "nose.01 → nose.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "lip-1",
+          "b": "face-edge-2",
+          "reason": "lip.01 → face-edge.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.8651
+        },
+        {
+          "a": "curl-6",
+          "b": "face-edge-2",
+          "reason": "curl.06 → face-edge.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "nose-2",
+          "b": "lip-1",
+          "reason": "nose.02 → lip.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.8751
+        },
+        {
+          "a": "nose-2",
+          "b": "lip-2",
+          "reason": "nose.02 → lip.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9195
+        },
+        {
+          "a": "lip-1",
+          "b": "lip-2",
+          "reason": "lip.01 → lip.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7454
+        },
+        {
+          "a": "lip-1",
+          "b": "neck-1",
+          "reason": "lip.01 → neck.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6321
+        },
+        {
+          "a": "lip-2",
+          "b": "face-edge-3",
+          "reason": "lip.02 → face-edge.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "curl-6",
+          "b": "neck-1",
+          "reason": "curl.06 → neck.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "face-edge-3",
+          "b": "hand-1",
+          "reason": "face-edge.03 → hand.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "face-edge-3",
+          "b": "neck-2",
+          "reason": "face-edge.03 → neck.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6705
+        },
+        {
+          "a": "hand-1",
+          "b": "hand-2",
+          "reason": "hand.01 → hand.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "neck-2",
+          "b": "hand-1",
+          "reason": "neck.02 → hand.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "hand-2",
+          "b": "hand-3",
+          "reason": "hand.02 → hand.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "neck-1",
+          "b": "neck-2",
+          "reason": "neck.01 → neck.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9199
+        },
+        {
+          "a": "neck-1",
+          "b": "neck-3",
+          "reason": "neck.01 → neck.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9502
+        },
+        {
+          "a": "neck-2",
+          "b": "neck-3",
+          "reason": "neck.02 → neck.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.725
+        }
+      ]
+    },
+    "structure": {
+      "title": "Structure",
+      "meaning": "Unused; no measured relationship claimed.",
+      "edges": []
+    },
+    "pattern": {
+      "title": "Pattern",
+      "meaning": "Unused; no measured relationship claimed.",
+      "edges": []
+    }
+  },
+  "rules": {
+    "roles": [
+      {
+        "role": "curl",
+        "rule": "Center or visible turn of a carved hair curl."
+      },
+      {
+        "role": "eye",
+        "rule": "Visible carved iris or eye opening."
+      },
+      {
+        "role": "nose",
+        "rule": "Visible nose tip or nostril edge."
+      },
+      {
+        "role": "lip",
+        "rule": "Visible corner or contour of the carved lips."
+      },
+      {
+        "role": "face-edge",
+        "rule": "Visible ear boundary or chin contour."
+      },
+      {
+        "role": "neck",
+        "rule": "Visible neck or clavicle contour."
+      },
+      {
+        "role": "hand",
+        "rule": "Visible fingertip, knuckle or wrist contour."
+      }
+    ],
+    "link": "Decorative subject-bound neighbours with empty diametral circles, a narrow image-saliency envelope and shortest bridges between disconnected subject parts; no measured or semantic relationships."
+  },
+  "focus": [
+    "eye-1",
+    "nose-1"
+  ],
+  "observations": []
+}

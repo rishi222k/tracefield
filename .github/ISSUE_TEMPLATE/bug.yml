@@ -1,0 +1,26 @@
+name: Bug report
+description: Report a reproducible studio or skill failure.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "For vulnerabilities, use Security → Report a vulnerability. Do not attach private photos, project bundles or secrets."
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Prefer a small synthetic fixture; source photos are optional.
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: Tracefield tag or commit, Node version and browser
+    validations:
+      required: true

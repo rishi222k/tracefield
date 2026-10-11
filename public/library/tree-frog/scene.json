@@ -1,0 +1,476 @@
+{
+  "version": 1,
+  "id": "tree-frog",
+  "title": "Tree Frog",
+  "subtitle": "Eye, snout, back and visible limb/toe details; moss and bokeh excluded.",
+  "analysis": {
+    "version": "tracefield-interpretation-v1",
+    "sourceSha256": "591a6b3efe0ad062740e127cc18791a981fa4e83d71e956f1bfa006ce763d8c3",
+    "type": "agent-authored",
+    "inputSha256": "74e0a81d88e09f06cd055d82d61c4505eab23206a91dd5681f05db177b5e425b",
+    "ingestionVersion": "canonical-png-v1",
+    "proposalVersion": "feature-proposal-v3"
+  },
+  "image": {
+    "src": "/library/tree-frog/image.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "nodes": [
+    {
+      "id": "eye-1",
+      "x": 0.714,
+      "y": 0.466,
+      "label": "eye.01",
+      "kind": "observation",
+      "reason": "Visible red eye and pupil. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        -18
+      ]
+    },
+    {
+      "id": "snout-1",
+      "x": 0.767,
+      "y": 0.48,
+      "label": "snout.01",
+      "kind": "observation",
+      "reason": "Small visible nostril. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        -18
+      ]
+    },
+    {
+      "id": "snout-2",
+      "x": 0.773,
+      "y": 0.494,
+      "label": "snout.02",
+      "kind": "observation",
+      "reason": "Right mouth edge. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "back-1",
+      "x": 0.346,
+      "y": 0.474,
+      "label": "back.01",
+      "kind": "observation",
+      "reason": "Rear upper body junction. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "back-2",
+      "x": 0.472,
+      "y": 0.461,
+      "label": "back.02",
+      "kind": "observation",
+      "reason": "Middle upper back. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "back-3",
+      "x": 0.634,
+      "y": 0.458,
+      "label": "back.03",
+      "kind": "observation",
+      "reason": "Back behind the head. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "back-4",
+      "x": 0.657,
+      "y": 0.485,
+      "label": "back.04",
+      "kind": "observation",
+      "reason": "Round green cheek boundary. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "joint-1",
+      "x": 0.25,
+      "y": 0.428,
+      "label": "joint.01",
+      "kind": "observation",
+      "reason": "Raised rear limb bend. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "joint-2",
+      "x": 0.238,
+      "y": 0.533,
+      "label": "joint.02",
+      "kind": "observation",
+      "reason": "Folded hind limb bend. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "joint-3",
+      "x": 0.335,
+      "y": 0.478,
+      "label": "joint.03",
+      "kind": "observation",
+      "reason": "Rear hip turn. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "joint-4",
+      "x": 0.626,
+      "y": 0.509,
+      "label": "joint.04",
+      "kind": "observation",
+      "reason": "Front limb shoulder. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "joint-5",
+      "x": 0.652,
+      "y": 0.55,
+      "label": "joint.05",
+      "kind": "observation",
+      "reason": "Front elbow turn. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "joint-6",
+      "x": 0.795,
+      "y": 0.593,
+      "label": "joint.06",
+      "kind": "observation",
+      "reason": "Front wrist transition. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "toe-1",
+      "x": 0.112,
+      "y": 0.507,
+      "label": "toe.01",
+      "kind": "observation",
+      "reason": "Far rear toe pad. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "toe-2",
+      "x": 0.175,
+      "y": 0.585,
+      "label": "toe.02",
+      "kind": "observation",
+      "reason": "Left hind foot pad. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "toe-3",
+      "x": 0.223,
+      "y": 0.612,
+      "label": "toe.03",
+      "kind": "observation",
+      "reason": "Lower hind toe pad. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "toe-4",
+      "x": 0.267,
+      "y": 0.582,
+      "label": "toe.04",
+      "kind": "observation",
+      "reason": "Right hind toe pad. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "toe-5",
+      "x": 0.886,
+      "y": 0.605,
+      "label": "toe.05",
+      "kind": "observation",
+      "reason": "Outer front toe pad. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        -18
+      ]
+    },
+    {
+      "id": "toe-6",
+      "x": 0.846,
+      "y": 0.625,
+      "label": "toe.06",
+      "kind": "observation",
+      "reason": "Lower front toe pad. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "toe-7",
+      "x": 0.829,
+      "y": 0.579,
+      "label": "toe.07",
+      "kind": "observation",
+      "reason": "Upper front toe pad. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        -18
+      ]
+    }
+  ],
+  "networks": {
+    "constellation": {
+      "title": "Constellation",
+      "meaning": "Decorative subject-bound geometric web.",
+      "edges": [
+        {
+          "a": "joint-1",
+          "b": "joint-3",
+          "reason": "joint.01 → joint.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "joint-1",
+          "b": "toe-1",
+          "reason": "joint.01 → toe.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6486
+        },
+        {
+          "a": "joint-1",
+          "b": "joint-2",
+          "reason": "joint.01 → joint.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6807
+        },
+        {
+          "a": "back-2",
+          "b": "back-3",
+          "reason": "back.02 → back.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.998
+        },
+        {
+          "a": "back-3",
+          "b": "back-4",
+          "reason": "back.03 → back.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "back-1",
+          "b": "back-2",
+          "reason": "back.01 → back.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "back-2",
+          "b": "joint-4",
+          "reason": "back.02 → joint.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7005
+        },
+        {
+          "a": "eye-1",
+          "b": "snout-1",
+          "reason": "eye.01 → snout.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "eye-1",
+          "b": "back-4",
+          "reason": "eye.01 → back.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "back-1",
+          "b": "joint-3",
+          "reason": "back.01 → joint.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "joint-2",
+          "b": "joint-3",
+          "reason": "joint.02 → joint.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "snout-1",
+          "b": "snout-2",
+          "reason": "snout.01 → snout.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "back-4",
+          "b": "joint-4",
+          "reason": "back.04 → joint.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "snout-2",
+          "b": "joint-5",
+          "reason": "snout.02 → joint.05: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.559
+        },
+        {
+          "a": "snout-2",
+          "b": "toe-7",
+          "reason": "snout.02 → toe.07: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7699
+        },
+        {
+          "a": "joint-2",
+          "b": "toe-1",
+          "reason": "joint.02 → toe.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7171
+        },
+        {
+          "a": "toe-1",
+          "b": "toe-2",
+          "reason": "toe.01 → toe.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9415
+        },
+        {
+          "a": "joint-4",
+          "b": "joint-5",
+          "reason": "joint.04 → joint.05: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "joint-2",
+          "b": "toe-4",
+          "reason": "joint.02 → toe.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "joint-2",
+          "b": "toe-2",
+          "reason": "joint.02 → toe.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7781
+        },
+        {
+          "a": "joint-5",
+          "b": "joint-6",
+          "reason": "joint.05 → joint.06: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7343
+        },
+        {
+          "a": "joint-6",
+          "b": "toe-7",
+          "reason": "joint.06 → toe.07: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "toe-5",
+          "b": "toe-7",
+          "reason": "toe.05 → toe.07: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.741
+        },
+        {
+          "a": "toe-6",
+          "b": "toe-7",
+          "reason": "toe.06 → toe.07: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.8837
+        },
+        {
+          "a": "toe-3",
+          "b": "toe-4",
+          "reason": "toe.03 → toe.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "toe-2",
+          "b": "toe-3",
+          "reason": "toe.02 → toe.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "joint-6",
+          "b": "toe-6",
+          "reason": "joint.06 → toe.06: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7209
+        },
+        {
+          "a": "toe-5",
+          "b": "toe-6",
+          "reason": "toe.05 → toe.06: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        }
+      ]
+    },
+    "structure": {
+      "title": "Structure",
+      "meaning": "Unused; no measured relationship claimed.",
+      "edges": []
+    },
+    "pattern": {
+      "title": "Pattern",
+      "meaning": "Unused; no measured relationship claimed.",
+      "edges": []
+    }
+  },
+  "rules": {
+    "roles": [
+      {
+        "role": "eye",
+        "rule": "Visible red eye with dark pupil."
+      },
+      {
+        "role": "snout",
+        "rule": "Visible nose or mouth edge."
+      },
+      {
+        "role": "back",
+        "rule": "Visible upper back or side boundary."
+      },
+      {
+        "role": "joint",
+        "rule": "Visible bend or junction of a limb."
+      },
+      {
+        "role": "toe",
+        "rule": "Visible orange toe pad or foot extremity."
+      }
+    ],
+    "link": "Decorative subject-bound neighbours with empty diametral circles, a narrow image-saliency envelope and shortest bridges between disconnected subject parts; no measured or semantic relationships."
+  },
+  "focus": [
+    "eye-1"
+  ],
+  "observations": []
+}

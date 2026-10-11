@@ -55,6 +55,7 @@ import { studio, download, type Settings } from "@/lib/studio";
 import type { exportVideo } from "@/lib/export-video";
 import { ranges, RENDERER_VERSION } from "../public/settings.js";
 import { acquisitionAt } from "../public/timeline.js";
+import { loadLibraryIndex } from "../public/library-index.js";
 import { cn } from "@/lib/utils";
 
 const looks = [
@@ -536,13 +537,7 @@ function App() {
       document.fonts.load('10px "Lab Serif Mono"'),
       document.fonts.load('13px "Geist Variable"'),
     ])
-      .then(async () => {
-        const local = await fetch("/library/index.local.json");
-        const response = local.status === 404 ? await fetch("/library/index.json") : local;
-        if (!response.ok) throw new Error("Image library could not be loaded.");
-        return response;
-      })
-      .then((r) => r.json())
+      .then(() => loadLibraryIndex())
       .then((list: LibraryEntry[]) => {
         setEntries(list);
         const requested = new URLSearchParams(location.search).get("scene");
