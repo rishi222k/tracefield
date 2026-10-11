@@ -1,0 +1,266 @@
+name: Remote Independent Review
+
+# One evidence producer for Tracefield. The provider-independent `review-required`
+# workflow validates whichever trusted reviewer produces a complete exact-head
+# review, so this job is never a required check and its quota or credentials
+# can never block a merge.
+#
+# Independent by design: it runs remotely, in a fresh context, with no
+# knowledge of the session that wrote the code. Comments only — it never
+# merges, closes, approves, or requests changes.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: "PR number to review (any base branch)"
+        required: true
+        type: string
+
+# Keyed on the event as well as the PR, so an automatic run that decides to
+# skip can never cancel a manual run that is doing the real review.
+concurrency:
+  group: remote-independent-review-${{ github.event_name }}-${{ github.event.pull_request.number || inputs.pr }}
+  cancel-in-progress: true
+
+jobs:
+  remote-independent-review:
+    # Drafts are still being written. Dependabot runs have no secrets; review
+    # those by dispatching this workflow by hand.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.draft == false && github.actor != 'dependabot[bot]')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write
+    steps:
+      - name: Check reviewer credential
+        id: credential
+        env:
+          TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::warning::CLAUDE_CODE_OAUTH_TOKEN is not set; no Claude review was produced. review-required still needs a trusted review."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # One source of truth for the PR under review, so the rest of the job
+      # doesn't care whether it was triggered by an event or by hand.
+      - name: Resolve PR
+        id: pr
+        if: steps.credential.outputs.ready == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.pull_request.number || inputs.pr }}
+        run: |
+          set -euo pipefail
+          data=$(gh pr view "$NUMBER" --repo "$GITHUB_REPOSITORY" \
+            --json number,headRefOid,headRefName,baseRefName,state)
+          state=$(jq -r .state <<<"$data")
+          if [ "$state" != "OPEN" ]; then
+            echo "::error::PR #$NUMBER is $state, not OPEN — nothing to review."
+            exit 1
+          fi
+          {
+            echo "number=$(jq -r .number <<<"$data")"
+            echo "sha=$(jq -r .headRefOid <<<"$data")"
+            echo "head=$(jq -r .headRefName <<<"$data")"
+            echo "base=$(jq -r .baseRefName <<<"$data")"
+          } >> "$GITHUB_OUTPUT"
+          jq -r '"Reviewing #\(.number): \(.headRefName) -> \(.baseRefName) @ \(.headRefOid[0:8])"' <<<"$data"
+
+      - name: Checkout PR
+        if: steps.pr.outcome == 'success'
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          # Pin the SHA so a push mid-run cannot be reviewed half-old. Full
+          # history so the reviewer compares against the base branch.
+          ref: ${{ steps.pr.outputs.sha }}
+          fetch-depth: 0
+
+      - name: Fetch base branch
+        if: steps.pr.outcome == 'success'
+        run: |
+          git fetch --no-tags origin \
+            "+refs/heads/${{ steps.pr.outputs.base }}:refs/remotes/origin/${{ steps.pr.outputs.base }}"
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        if: steps.pr.outcome == 'success'
+        with:
+          node-version: 24
+          cache: npm
+
+      # Installing dependencies is what lets the reviewer execute the tests
+      # rather than hand-trace them. A failure here degrades the review to
+      # reading code; it must not stop the review from existing.
+      - name: Install dependencies
+        if: steps.pr.outcome == 'success'
+        continue-on-error: true
+        run: npm ci
+
+      - name: Remote independent review
+        if: steps.pr.outcome == 'success'
+        uses: anthropics/claude-code-action@cb4c30246791ba0e8cdd653a00e7bcab3b47dd3c # v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ steps.pr.outputs.number }}
+            BASE: ${{ steps.pr.outputs.base }}  HEAD: ${{ steps.pr.outputs.head }}
+            HEAD SHA: ${{ steps.pr.outputs.sha }}
+            TRIGGER: ${{ github.event_name }}
+
+            You are the REMOTE INDEPENDENT REVIEWER for Tracefield.
+            A local canvas lab that separates image interpretation from network presentation.
+
+            If BASE is `main`, this is the merge gate. If BASE is anything
+            else, this is an early review asked for by hand: compare against
+            `origin/<BASE>` and say plainly when something is incomplete
+            rather than broken.
+
+            Re-derive everything yourself. Do NOT assume the PR description,
+            the commit messages, or any prior review is correct. The author was
+            an AI session with its own blind spots; your value is a second,
+            uncontaminated read.
+
+            ## What this repo is
+
+            Dependency-free browser JavaScript and a loopback-only Node 24 static server.
+            Authored scene JSON holds normalized anchors and edge rationales. Uploads
+            receive local contrast proposals. Project JSON embeds uploaded PNGs.
+            No database, API key, external upload or inference service.
+
+            Read these first: `AGENTS.md`, `.github/review/README.md`,
+            `.github/review/tracefield-software-review-v1.json`, `README.md` and `references.md`.
+
+            ## The lenses
+
+            1. Privacy/input: trace project.js, scene.js and app.js decoding and bounds.
+            2. Replay: verify versions, stable defaults, image identity, fonts and caches.
+            3. Meaning: scene decisions must stay separate from settings/render.js.
+            4. Effects/exports: image-effects.js must be pure; exports freeze state.
+            5. Evidence: run checks; preserve checkpoints; never claim skipped review passes.
+
+            ## Method
+
+            1. `gh pr view` and `git diff origin/<BASE>...HEAD` to see what
+               changed and why.
+            2. Read whole files, callers and callees; never a hunk alone.
+            3. Trace one complete path end to end for each changed area
+               (upload -> proposal -> saved scene -> controls -> render -> project restore/export).
+            4. Run the owned checks that apply and report their real results:
+               npm run check; node --test .github/scripts/validate-review-profile.test.mjs; node .github/scripts/validate-review-profile.mjs .github/review/tracefield-software-review-v1.json --profile-id tracefield-software. Never report a check you did not run as
+               passed; a check that skips is reported as skipped.
+            5. Prefer a few high-signal findings to exhaustive nitpicking.
+               "No blocking issues" is a valid outcome.
+            6. Every finding needs file and line, the input or sequence that
+               triggers it, and what goes wrong. No failure scenario, no
+               finding. Label suspicions as questions.
+            7. Do not re-litigate a decision the PR description records as
+               Rishi's policy call. If you think one is wrong, say so once in
+               Open questions.
+
+            ## Output
+
+            Leave line-anchored detail as INLINE review comments with the
+            github inline comment tool. That tool exists only on automatic runs
+            (TRIGGER is `pull_request`). On a manual run, post ALL detail as
+            exactly ONE comment via `gh pr comment`, titled
+            "### Inline detail — Tracefield Software Review", BEFORE the review, and
+            link to it from the review body. Every finding keeps its
+            `file:line` and its concrete failing input.
+
+            Then submit ONE formal review:
+            `gh pr review <PR#> --comment --body "..."`.
+
+            Evaluate every row of `.github/review/tracefield-software-review-v1.json`
+            exactly once. Review fresh before reading prior reviews, then
+            reconcile every prior BLOCKING finding as Fixed, Still open, or
+            Regressed.
+
+            Only a concrete security, privacy, data-loss, data-integrity,
+            correctness or contract issue is BLOCKING. Suggestions and nits are
+            NON_BLOCKING and never force another revision. After three
+            substantive reviewed revisions without convergence, say the loop
+            must stop and escalate.
+
+            The body is glanceable; completeness tables are exempt from any
+            length limit. Start with this exact contiguous block:
+
+            ## Tracefield Software Review
+            REVIEW_SCHEMA: tracefield-software-review-v1
+            PROFILE_ID: tracefield-software
+            HEAD_SHA: ${{ steps.pr.outputs.sha }}
+            REVIEWER: claude[bot]
+            VERDICT: SHIP | FIX_FIRST | REWORK
+            BLOCKERS: <integer>
+            CHECKLIST_COVERAGE: <covered>/<required>
+            COVERAGE_COMPLETE: YES | NO
+
+            SHIP requires complete coverage and zero blockers. FIX_FIRST and
+            REWORK require at least one blocker. A current-head SHIP is an
+            absolute stop: do not ask for cleanup or another round.
+
+            ### Changes in this PR
+            | # | Change | Remark | — one row per distinct change; remark is
+            15 words or fewer (solid / risky / duplicates X), not a verdict.
+
+            ### Checklist coverage
+            | ID | Result | Evidence | — every profile row exactly once.
+            Result is PASS / BLOCKING / NON_BLOCKING / N/A.
+
+            ### Verification run
+            One line: which checks you ran and their results, and which you
+            could not run. "none" if you ran none.
+
+            ### Blocking findings
+            | ID | Finding | Evidence | Required fix | — BLOCKERS equals the
+            number of rows. Write "None" when zero.
+
+            ### Prior-blocker reconciliation
+            | Prior finding | Status | Evidence | — Fixed / Still open /
+            Regressed. "None found" only when no prior review raised one.
+
+            ### Non-blocking follow-ups
+            Optional suggestions only, or "None".
+
+            ### Open questions
+            Genuine uncertainty needing Rishi's call; omit if none.
+
+            STRICT: never run `gh pr merge` or `gh pr close`; never use
+            `--approve` or `--request-changes` (always `--comment`). You
+            advise; the merge decision is Rishi's.
+
+          # Model ID: https://platform.claude.com/docs/en/models/overview
+          claude_args: |
+            --model claude-opus-5-5
+            --effort medium
+            --max-turns 80
+            --allowedTools "Read,Grep,Glob,Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr review:*),Bash(gh pr comment:*),Bash(git log:*),Bash(git diff:*),Bash(git show:*),Bash(npm run check:*),Bash(node --test:*),Bash(node .github/scripts/validate-review-profile.mjs:*),mcp__github_inline_comment__create_inline_comment,WebSearch,WebFetch"
+
+      # Producer health is advisory. Validate its artifact so failures are
+      # visible; branch protection relies on `review-required` instead.
+      - name: Validate the produced review
+        if: always() && steps.pr.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ steps.pr.outputs.number }}
+          SHA: ${{ steps.pr.outputs.sha }}
+        run: |
+          set -euo pipefail
+          gh api --paginate --slurp \
+            "/repos/${{ github.repository }}/pulls/$PR/reviews" \
+            > "$RUNNER_TEMP/reviews.json"
+          node .github/scripts/validate-review-profile.mjs \
+            .github/review/tracefield-software-review-v1.json \
+            --profile-id tracefield-software \
+            --reviews-json "$RUNNER_TEMP/reviews.json" \
+            --head-sha "$SHA"

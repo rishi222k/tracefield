@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "reviewSchema": "tracefield-software-review-v1",
+  "profileId": "tracefield-software",
+  "heading": "Tracefield Software Review",
+  "trustedReviewers": [
+    "claude[bot]",
+    "rishi222k"
+  ],
+  "trustedAuthorAssociations": [
+    "OWNER",
+    "MEMBER",
+    "COLLABORATOR"
+  ],
+  "verdicts": [
+    "SHIP",
+    "FIX_FIRST",
+    "REWORK"
+  ],
+  "sources": [
+    {
+      "id": "NN-PROTECT",
+      "path": ".github/review/README.md",
+      "anchor": "## What Tracefield must protect",
+      "guards": [
+        "Library images and exports are served locally; imported projects cannot fetch arbitrary remote URLs or execute content.",
+        "Presentation changes never reinterpret or mutate saved anchors, rationales or candidate edges.",
+        "Project bundles retain the image, scene, settings, renderer/effect versions and paused frame; incompatible versions fail explicitly.",
+        "Geometric feature proposals and fictional labels are never presented as semantic detection or measured science.",
+        "Validate image dimensions, project size, coordinates, edge endpoints and presentation values before rendering.",
+        "Concurrent imports cannot replace an active project out of order; processed image caches cannot reuse another image.",
+        "Exported stills and recordings use the scene and presentation captured at export start.",
+        "Preserve saved scenes and renderer compatibility; describe changed effects and their limits.",
+        "Required checks run without credentials, and skipped checks are reported as skipped.",
+        "Agents never merge, approve, request changes or bypass branch protection.",
+        "Image styles use fixed pixel operations only; no model calls, tokens, authored masks or per-image agent styling decisions."
+      ],
+      "description": "Material failure modes of this repo."
+    },
+    {
+      "id": "NN-CI",
+      "path": ".github/workflows/check.yml",
+      "anchor": "name: Check",
+      "guards": [
+        "permissions:\n  contents: read",
+        "run: npm run check",
+        "run: node --test .github/scripts/validate-review-profile.test.mjs"
+      ],
+      "description": "Credential-free, least-privilege required checks."
+    },
+    {
+      "id": "NN-REVIEW",
+      "path": ".github/review/README.md",
+      "anchor": "## Loop contract",
+      "guards": [
+        "Only a concrete `BLOCKING` finding prevents `SHIP`",
+        "After three substantive reviewed revisions without convergence"
+      ],
+      "description": "Severity, convergence and stopping rules."
+    }
+  ],
+  "checklist": [
+    {
+      "id": "NN-LOCAL-PRIVACY",
+      "sources": [
+        "NN-PROTECT"
+      ],
+      "question": "Can uploads, imports, previews and exports stay local, with no remote image fetch or executable content accepted?"
+    },
+    {
+      "id": "NN-DECISIONS",
+      "sources": [
+        "NN-PROTECT"
+      ],
+      "question": "Do presentation edits select only saved nodes/edges and leave their meanings and coordinates unchanged?"
+    },
+    {
+      "id": "NN-REPLAY",
+      "sources": [
+        "NN-PROTECT"
+      ],
+      "question": "Does save/open preserve image, scene, settings, versions and paused frame, rejecting incompatible versions?"
+    },
+    {
+      "id": "NN-CLAIMS",
+      "sources": [
+        "NN-PROTECT"
+      ],
+      "question": "Do labels and documentation distinguish agent observations, geometric proposals and fictional styling?"
+    },
+    {
+      "id": "NN-AUTOMATIC-STYLING",
+      "sources": [
+        "NN-PROTECT"
+      ],
+      "question": "Do all image treatments remain fixed automatic pixel math with no inference, authored masks or per-image agent style decisions, preserving the selected light/dark effects?"
+    },
+    {
+      "id": "NN-INPUT",
+      "sources": [
+        "NN-PROTECT"
+      ],
+      "question": "Are malformed, oversized and unsafe scenes, images and settings rejected before rendering?"
+    },
+    {
+      "id": "NN-IMAGE-SWITCH",
+      "sources": [
+        "NN-PROTECT"
+      ],
+      "question": "Are import/upload operations serialized, with image dimensions checked and effect caches invalidated?"
+    },
+    {
+      "id": "NN-EXPORT",
+      "sources": [
+        "NN-PROTECT"
+      ],
+      "question": "Are PNG and video contents and filenames captured from the same immutable export selection?"
+    },
+    {
+      "id": "NN-VISUAL-CHECKPOINT",
+      "sources": [
+        "NN-PROTECT"
+      ],
+      "question": "Are original assets and checkpoint artifacts preserved, with the negative and dark-field behavior described honestly?"
+    },
+    {
+      "id": "NN-VERIFICATION",
+      "sources": [
+        "NN-CI",
+        "NN-REVIEW"
+      ],
+      "question": "Do relevant credential-free checks execute with meaningful coverage, and are actual results distinguished from skipped checks?"
+    },
+    {
+      "id": "NN-SCOPE",
+      "sources": [
+        "NN-PROTECT",
+        "NN-REVIEW"
+      ],
+      "question": "Does the change preserve existing functionality and remain within scope, with no agent merge or post-SHIP cleanup?"
+    }
+  ]
+}
