@@ -886,22 +886,6 @@ p {
   justify-content: flex-end;
   gap: 9px;
 }
-.export-actions > span {
-  margin-right: auto;
-  font-size: 11px;
-  color: var(--muted-foreground);
-}
-.export-meta {
-  font: 10px var(--font-mono);
-  color: var(--muted-foreground);
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-.export-meta svg {
-  width: 12px;
-  height: 12px;
-}
 .export-progress {
   display: flex;
   align-items: center;

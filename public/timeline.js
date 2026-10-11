@@ -54,7 +54,13 @@ export function videoPlan(duration, speed, fps = 30) {
     },
   };
 }
+/** @param {number} width @param {number} height @param {number | 'source'} maxSize */
 export function exportSize(width, height, maxSize = 1080) {
+  if (![width, height].every(n => Number.isInteger(n) && n > 0 && n <= 4096))
+    throw new Error("Invalid export dimensions.");
+  // Native exports fill the photo's own frame. Keep odd dimensions exact and
+  // let codec negotiation select a compatible encoder rather than add bars.
+  if (maxSize === "source") return {width, height};
   if (
     ![width, height, maxSize].every(Number.isFinite) ||
     width <= 0 ||

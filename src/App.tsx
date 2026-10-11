@@ -13,7 +13,6 @@ import {
   Blend,
   Crosshair,
   ArrowUpRight,
-  Check,
   ChevronDown,
   PanelLeft,
   Image as ImageIcon,
@@ -332,7 +331,7 @@ const Inspector = memo(function Inspector() {
         </div>
         <SettingScrub field="markerSize" label="Size" format={(v) => `${Math.round(v)}px`} />
         <SettingScrub field="highlight" label="Accent" format={(v) => `${Math.round(v)}%`} />
-        <SettingScrub field="labels" label="Labels" format={(v) => `${Math.round(v)}%`} />
+        <SettingScrub field="labelOpacity" label="Label opacity" format={(v) => `${Math.round(v)}%`} />
       </section>
     </aside>
   );
@@ -350,7 +349,7 @@ const LoopExport = memo(function LoopExport({
     studio.getPresentationSnapshot,
   );
   const [fps, setFps] = useState("30"),
-    [size, setSize] = useState("1080"),
+    [size, setSize] = useState("source"),
     [progress, setProgress] = useState<number | null>(null),
     [error, setError] = useState(""),
     [result, setResult] = useState<Awaited<
@@ -358,6 +357,10 @@ const LoopExport = memo(function LoopExport({
     > | null>(null),
     [url, setUrl] = useState("");
   const abort = useRef<AbortController | null>(null);
+  useEffect(() => {
+    setResult(null);
+    setError("");
+  }, [snapshot.scene, size, fps]);
   useEffect(
     () => () => {
       abort.current?.abort();
@@ -385,7 +388,7 @@ const LoopExport = memo(function LoopExport({
       const r = await exportVideo({
         snapshot,
         fps: Number(fps),
-        size: Number(size),
+        size: size === "source" ? "source" : Number(size),
         signal: controller.signal,
         onProgress: (done, total) => setProgress((done / total) * 100),
       });
@@ -444,6 +447,9 @@ const LoopExport = memo(function LoopExport({
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
+                <SelectItem value="source">
+                  Original image size{snapshot.scene ? ` · ${snapshot.scene.image.width} × ${snapshot.scene.image.height}` : ""}
+                </SelectItem>
                 <SelectItem value="1080">1080 px</SelectItem>
                 <SelectItem value="720">720 px</SelectItem>
               </SelectContent>
@@ -473,27 +479,12 @@ const LoopExport = memo(function LoopExport({
             <span>{Math.round(progress)}%</span>
           </div>
         )}
-        {result && (
-          <div className="export-meta">
-            <Check />
-            {result.frames} frames · {result.seconds.toFixed(2)}s ·{" "}
-            {result.width} × {result.height} ·{" "}
-            {result.name.endsWith(".mp4") ? "MP4" : "WebM"}
-          </div>
-        )}
         {error && (
           <p role="alert" className="error-text">
             {error}
           </p>
         )}
         <div className="export-actions">
-          <span>
-            {snapshot.settings.motion === "still" &&
-            snapshot.settings.labelMotion === "anchored" &&
-            !snapshot.settings.drift
-              ? "Still composition"
-              : `${(snapshot.settings.duration / snapshot.settings.speed).toFixed(1)}s at ${snapshot.settings.speed}×`}
-          </span>
           {progress !== null ? (
             <Button variant="outline" onClick={() => abort.current?.abort()}>
               Cancel
@@ -583,7 +574,7 @@ function App() {
   return (
     <div className="studio">
       <input ref={projectInput} type="file" accept=".json,application/json" hidden
-        aria-label="Open saved project" onChange={(event) => {
+        aria-label="Import saved project" onChange={(event) => {
           const file = event.target.files?.[0];
           if (file) studio.open(file).catch((error) => studio.fail(error));
           event.target.value = "";
@@ -603,6 +594,15 @@ function App() {
           )}
         </div>
         <div className="topbar-right">
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={state.loading}
+            onClick={() => projectInput.current?.click()}
+          >
+            <FolderOpen />
+            Import Project
+          </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button size="sm" disabled={state.loading}>
@@ -622,10 +622,7 @@ function App() {
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem disabled={!state.scene} onClick={() => studio.exportProject()}>
-                <FileJson /> Project
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => projectInput.current?.click()}>
-                <FolderOpen /> Open project
+                <FileJson /> Project JSON
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

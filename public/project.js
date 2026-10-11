@@ -6,6 +6,10 @@ import {
 } from "./settings.js";
 import { EFFECT_VERSION } from "./image-effects.js";
 
+// v3 retains label opacity. Earlier readers reject it rather than silently
+// dropping that presentation choice; v1/v2 imports remain supported here.
+export const PROJECT_VERSION = 3;
+
 // Read only the PNG header before a browser decoder can allocate the image.
 // Scene dimensions alone cannot bound an imported image's actual allocation.
 export function validateImageHeader(image) {
@@ -26,8 +30,10 @@ export function validateImageHeader(image) {
 }
 
 export function validateProject(data) {
-  if (!data || ![1, 2].includes(data.version))
+  if (!data || ![1, 2, PROJECT_VERSION].includes(data.version))
     throw new Error("Not a saved Tracefield project.");
+  if (data.version === PROJECT_VERSION && typeof data.settings?.labelOpacity !== 'number')
+    throw new Error('Saved project is missing label opacity.');
   const settings = normalizeSettings(data.settings);
   const time =
     data.time === undefined

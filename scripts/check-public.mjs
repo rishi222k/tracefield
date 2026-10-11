@@ -37,7 +37,12 @@ export function checkPublic(){
  for(const file of tracked)if(needsApproval(file))validatePublicFile(file,readFileSync(file),approved);
  for(const line of git(['rev-list','--objects','--all']).split('\n')){
   const oid=line.slice(0,40),file=line.slice(41);
-  if(file&&needsApproval(file)&&git(['cat-file','-t',oid]).trim()==='blob')validatePublicFile(file,execFileSync('git',['cat-file','blob',oid]),approved);
+  if(file&&needsApproval(file)&&git(['cat-file','-t',oid]).trim()==='blob'){
+   if(!approved.has(file))throw new Error(`Unapproved media or study: ${file}`);
+   const size=Number(git(['cat-file','-s',oid]));
+   if(!Number.isInteger(size)||size<0||size>32*1024*1024)throw new Error(`Demo blob exceeds the public asset limit: ${file}`);
+   validatePublicFile(file,execFileSync('git',['cat-file','blob',oid],{maxBuffer:32*1024*1024}),approved);
+  }
  }
  console.log(`Public history contains only ${approved.size/2} explicitly licensed demo studies; no unapproved media or exports.`);
 }

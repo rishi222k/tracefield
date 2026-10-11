@@ -412,7 +412,7 @@ export function render(
     const end = { x: box.x + (box.x < p.x ? tw : 0), y: box.y + th * 0.5 };
     const elbow = { x: p.x + (end.x - p.x) * 0.45, y: end.y };
     ctx.strokeStyle = settings.primary;
-    ctx.globalAlpha = 0.53 * progress * alpha;
+    ctx.globalAlpha = 0.53 * progress * alpha * ((settings.labelOpacity ?? 100) / 100);
     ctx.lineWidth = 0.8 * unit;
     ctx.setLineDash([1 * unit, 5 * unit]);
     segment(ctx, p, elbow);
@@ -423,7 +423,7 @@ export function render(
       : contrast(settings.primary) === "#f5f6ef"
         ? "rgba(245,246,239,.88)"
         : "rgba(12,19,17,.82)";
-    ctx.globalAlpha = progress * alpha;
+    ctx.globalAlpha = progress * alpha * ((settings.labelOpacity ?? 100) / 100);
     ctx.fillRect(
       box.x - 3 * unit,
       box.y - 2 * unit,
@@ -431,7 +431,7 @@ export function render(
       th + 4 * unit,
     );
     ctx.fillStyle = settings.primary;
-    ctx.globalAlpha = 0.94 * progress * progress * alpha;
+    ctx.globalAlpha = 0.94 * progress * progress * alpha * ((settings.labelOpacity ?? 100) / 100);
     ctx.textBaseline = "top";
     const text = label;
     ctx.fillText(text, box.x, box.y);
@@ -490,6 +490,7 @@ export function render(
       ctx.fillStyle = settings.primary;
       ctx.font = `${9 * unit}px ${mono}`;
       ctx.textBaseline = "top";
+      ctx.globalAlpha *= (settings.labelOpacity ?? 100) / 100;
       ctx.fillText(active.label, px, py + size + 8 * unit);
       const anchor = scene.nodes.find((n) => n.id === active.id);
       ctx.fillStyle = settings.accent;

@@ -7,7 +7,7 @@ export const ranges=[
  ['highlight','Highlight mix',0,100,1,'%','styleControls'],['opacity','Line opacity',5,100,1,'%','styleControls'],['lineWidth','Line width',.3,2.5,.1,'px','styleControls'],['grid','Grid overlay',0,100,1,'%','styleControls'],
  ['surfaceTone','Surface tones',0,100,1,'%','imageControls'],
  ['exposure','Brightness',40,130,1,'%','imageControls'],['xrayContrast','Treatment intensity',10,100,1,'%','imageControls'],
- ['labels','Label density',0,100,1,'%','labelControls'],['fontSize','Type size',8,16,.5,'px','labelControls'],['letterSpacing','Letter spacing',0,12,1,'%','labelControls'],['noteTravel','Note travel',0,35,1,'px','labelControls']
+ ['labels','Label density',0,100,1,'%','labelControls'],['labelOpacity','Label opacity',0,100,1,'%','labelControls'],['fontSize','Type size',8,16,.5,'px','labelControls'],['letterSpacing','Letter spacing',0,12,1,'%','labelControls'],['noteTravel','Note travel',0,35,1,'px','labelControls']
 ];
 export function normalizeSettings(input){
  if(!input||typeof input!=='object'||Array.isArray(input))throw new Error('Missing presentation settings.');
