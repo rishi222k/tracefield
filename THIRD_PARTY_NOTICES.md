@@ -2126,7 +2126,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 
-## cn 0.4.0
+## cn 0.5.0
 
 MIT License
 
@@ -2202,7 +2202,7 @@ SOFTWARE.
 
 
 
-## framer-motion 14.1.0
+## framer-motion 14.6.0
 
 The MIT License (MIT)
 
@@ -2680,7 +2680,7 @@ Exhibit B - "Incompatible With Secondary Licenses" Notice
 
 
 
-## motion 14.1.0
+## motion 14.6.0
 
 The MIT License (MIT)
 
@@ -2706,7 +2706,7 @@ SOFTWARE.
 
 
 
-## motion-dom 14.1.0
+## motion-dom 14.6.0
 
 The MIT License (MIT)
 
@@ -2732,7 +2732,7 @@ SOFTWARE.
 
 
 
-## motion-utils 14.1.0
+## motion-utils 14.6.0
 
 The MIT License (MIT)
 
