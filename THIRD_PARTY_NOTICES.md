@@ -253,7 +253,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/primitive 1.1.7
+## @radix-ui/primitive 1.2.0
 
 MIT License
 
@@ -279,7 +279,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-accessible-icon 1.1.16
+## @radix-ui/react-accessible-icon 1.2.0
 
 MIT License
 
@@ -305,7 +305,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-accordion 1.2.21
+## @radix-ui/react-accordion 1.3.1
 
 MIT License
 
@@ -331,7 +331,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-alert-dialog 1.1.24
+## @radix-ui/react-alert-dialog 1.2.1
 
 MIT License
 
@@ -357,7 +357,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-arrow 1.1.16
+## @radix-ui/react-arrow 1.1.17
 
 MIT License
 
@@ -383,7 +383,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-aspect-ratio 1.1.16
+## @radix-ui/react-aspect-ratio 1.2.0
 
 MIT License
 
@@ -409,7 +409,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-avatar 1.2.7
+## @radix-ui/react-avatar 1.3.1
 
 MIT License
 
@@ -435,7 +435,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-checkbox 1.3.12
+## @radix-ui/react-checkbox 1.4.1
 
 MIT License
 
@@ -461,7 +461,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-collapsible 1.1.21
+## @radix-ui/react-collapsible 1.2.1
 
 MIT License
 
@@ -487,7 +487,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-collection 1.1.16
+## @radix-ui/react-collection 1.2.0
 
 MIT License
 
@@ -539,7 +539,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-context 1.2.2
+## @radix-ui/react-context 1.3.0
 
 MIT License
 
@@ -565,7 +565,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-context-menu 2.3.8
+## @radix-ui/react-context-menu 2.4.1
 
 MIT License
 
@@ -591,7 +591,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-dialog 1.2.0
+## @radix-ui/react-dialog 1.3.1
 
 MIT License
 
@@ -617,7 +617,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-direction 1.1.5
+## @radix-ui/react-direction 1.2.0
 
 MIT License
 
@@ -643,7 +643,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-dismissable-layer 1.1.20
+## @radix-ui/react-dismissable-layer 1.2.1
 
 MIT License
 
@@ -669,7 +669,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-dropdown-menu 2.1.25
+## @radix-ui/react-dropdown-menu 2.2.1
 
 MIT License
 
@@ -695,7 +695,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-focus-guards 1.1.6
+## @radix-ui/react-focus-guards 1.2.0
 
 MIT License
 
@@ -721,7 +721,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-focus-scope 1.2.0
+## @radix-ui/react-focus-scope 1.3.1
 
 MIT License
 
@@ -747,7 +747,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-form 0.2.0
+## @radix-ui/react-form 0.3.0
 
 MIT License
 
@@ -773,7 +773,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-hover-card 1.1.24
+## @radix-ui/react-hover-card 1.2.1
 
 MIT License
 
@@ -825,7 +825,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-label 2.1.16
+## @radix-ui/react-label 2.1.17
 
 MIT License
 
@@ -851,7 +851,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-menu 2.1.25
+## @radix-ui/react-menu 2.2.1
 
 MIT License
 
@@ -877,7 +877,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-menubar 1.1.25
+## @radix-ui/react-menubar 1.2.1
 
 MIT License
 
@@ -903,7 +903,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-navigation-menu 1.3.0
+## @radix-ui/react-navigation-menu 1.4.1
 
 MIT License
 
@@ -929,7 +929,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-one-time-password-field 0.1.17
+## @radix-ui/react-one-time-password-field 0.2.1
 
 MIT License
 
@@ -955,7 +955,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-password-toggle-field 0.1.12
+## @radix-ui/react-password-toggle-field 0.2.1
 
 MIT License
 
@@ -981,7 +981,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-popover 1.2.0
+## @radix-ui/react-popover 1.3.1
 
 MIT License
 
@@ -1007,7 +1007,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-popper 1.3.8
+## @radix-ui/react-popper 1.4.0
 
 MIT License
 
@@ -1033,7 +1033,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-portal 1.1.18
+## @radix-ui/react-portal 1.2.0
 
 MIT License
 
@@ -1085,7 +1085,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-primitive 2.1.11
+## @radix-ui/react-primitive 2.2.0
 
 MIT License
 
@@ -1111,7 +1111,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-progress 1.1.17
+## @radix-ui/react-progress 1.2.1
 
 MIT License
 
@@ -1137,7 +1137,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-radio-group 1.4.8
+## @radix-ui/react-radio-group 1.5.1
 
 MIT License
 
@@ -1163,7 +1163,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-roving-focus 1.1.20
+## @radix-ui/react-roving-focus 1.2.1
 
 MIT License
 
@@ -1189,7 +1189,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-scroll-area 1.3.0
+## @radix-ui/react-scroll-area 1.4.0
 
 MIT License
 
@@ -1215,7 +1215,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-select 2.3.8
+## @radix-ui/react-select 2.4.1
 
 MIT License
 
@@ -1241,7 +1241,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-separator 1.1.16
+## @radix-ui/react-separator 1.2.0
 
 MIT License
 
@@ -1267,7 +1267,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-slider 1.5.0
+## @radix-ui/react-slider 1.6.1
 
 MIT License
 
@@ -1293,7 +1293,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-slot 1.4.0
+## @radix-ui/react-slot 1.5.0
 
 MIT License
 
@@ -1319,7 +1319,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-switch 1.3.8
+## @radix-ui/react-switch 1.4.1
 
 MIT License
 
@@ -1345,7 +1345,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-tabs 1.1.22
+## @radix-ui/react-tabs 1.2.1
 
 MIT License
 
@@ -1371,7 +1371,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-toast 1.2.24
+## @radix-ui/react-toast 1.3.1
 
 MIT License
 
@@ -1397,7 +1397,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-toggle 1.1.19
+## @radix-ui/react-toggle 1.2.1
 
 MIT License
 
@@ -1423,7 +1423,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-toggle-group 1.1.20
+## @radix-ui/react-toggle-group 1.2.1
 
 MIT License
 
@@ -1449,7 +1449,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-toolbar 1.1.20
+## @radix-ui/react-toolbar 1.2.1
 
 MIT License
 
@@ -1475,7 +1475,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-tooltip 1.3.0
+## @radix-ui/react-tooltip 1.4.1
 
 MIT License
 
@@ -1501,7 +1501,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-use-callback-ref 1.1.4
+## @radix-ui/react-use-callback-ref 1.1.5
 
 MIT License
 
@@ -1527,7 +1527,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-use-controllable-state 1.2.6
+## @radix-ui/react-use-controllable-state 1.3.0
 
 MIT License
 
@@ -1579,7 +1579,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-use-escape-keydown 1.1.5
+## @radix-ui/react-use-escape-keydown 1.1.6
 
 MIT License
 
@@ -1735,7 +1735,7 @@ SOFTWARE.
 
 
 
-## @radix-ui/react-visually-hidden 1.2.12
+## @radix-ui/react-visually-hidden 1.2.13
 
 MIT License
 
@@ -2254,7 +2254,7 @@ SOFTWARE.
 
 
 
-## lucide-react 1.55.0
+## lucide-react 1.61.0
 
 ISC License
 
@@ -2302,7 +2302,7 @@ SOFTWARE.
 
 
 
-## mediabunny 1.61.3
+## mediabunny 1.62.0
 
 Mozilla Public License Version 2.0
 ==================================
@@ -2758,7 +2758,7 @@ SOFTWARE.
 
 
 
-## radix-ui 1.7.0
+## radix-ui 1.8.1
 
 MIT License
 
@@ -2784,7 +2784,7 @@ SOFTWARE.
 
 
 
-## react 19.3.0
+## react 19.3.1
 
 MIT License
 
@@ -2810,7 +2810,7 @@ SOFTWARE.
 
 
 
-## react-dom 19.3.0
+## react-dom 19.3.1
 
 MIT License
 
