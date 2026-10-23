@@ -1,5 +1,5 @@
 ---
-name: tracefield
+name: animate
 description: Turn a supplied photograph into a subject-bound constellation overlay in Tracefield, with visible-detail labels, an animated trace and a local studio for blends, markers, PNG, video and portable project export. Use when an image is supplied for a HUD or FUI node-link treatment, constellation study or Tracefield workflow.
 ---
 

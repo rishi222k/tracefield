@@ -2,6 +2,7 @@ import {readFile,access} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 const read=file=>readFile(new URL('../'+file,import.meta.url),'utf8');
 const canonical=await read('skills/tracefield/SKILL.md'),plugin=await read('plugins/tracefield/skills/animate/SKILL.md');
+assert.match(plugin,/^---\nname: animate\n/,'plugin skill must stay named animate (/tracefield:animate)');
 assert.equal(plugin.replace('name: animate\n','name: tracefield\n'),canonical,'skill copies have drifted');
 assert.match(canonical,/^---\nname: tracefield\ndescription: .+\n---/);
 assert.equal(await read('skills/tracefield/scripts/setup.mjs'),await read('plugins/tracefield/skills/animate/scripts/setup.mjs'),'setup helpers have drifted');
