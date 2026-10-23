@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "id": "marble-study",
+    "title": "Marble Study",
+    "scene": "/library/marble-study/scene.json",
+    "thumb": "/library/marble-study/image.png"
+  },
+  {
+    "id": "tree-frog",
+    "title": "Tree Frog",
+    "scene": "/library/tree-frog/scene.json",
+    "thumb": "/library/tree-frog/image.png"
+  },
+  {
+    "id": "painted-lady",
+    "title": "Painted Lady",
+    "scene": "/library/painted-lady/scene.json",
+    "thumb": "/library/painted-lady/image.png"
+  },
+  {
+    "id": "swallowtail",
+    "title": "Swallowtail",
+    "scene": "/library/swallowtail/scene.json",
+    "thumb": "/library/swallowtail/image.png"
+  },
+  {
+    "id": "honeybee",
+    "title": "Honeybee",
+    "scene": "/library/honeybee/scene.json",
+    "thumb": "/library/honeybee/image.png"
+  },
+  {
+    "id": "black-horse",
+    "title": "Black Horse",
+    "scene": "/library/black-horse/scene.json",
+    "thumb": "/library/black-horse/image.png"
+  }
+]

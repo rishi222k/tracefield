@@ -57,9 +57,13 @@ npm run lab -- --scene <id>
 
 Open the returned URL using the host's browser tools. The launcher verifies checkout identity before reusing a server and picks a free loopback port from 4318–4418. Do not assume any response on port 4318 is this lab.
 
-Inspect the settled frame (scrub to the middle) and play a complete cycle. Confirm labels point to visible details, the web stays close to the focal subject, Blend and Markers work, and the Export menu offers Image, Loop and Project. Keep concise notes about the roles and any ambiguity. If browser access is unavailable, report validation as run and visual verification as unperformed.
+Inspect the settled frame (scrub to the middle) and play a complete cycle. Confirm labels point to visible details, the web stays close to the focal subject, Blend and Markers work, and the Export menu offers Image, Loop and Project JSON. Import Project is a separate button beside Export. The pinned `v0.1.0` runtime instead names these Project and Open project within Export; use its existing controls when testing that release. Keep concise notes about the roles and any ambiguity. If browser access is unavailable, report validation as run and visual verification as unperformed.
 
-The user edits presentation in the studio. **Image** downloads a PNG. **Loop** renders and previews MP4/AVC or WebM depending on browser encoders. **Project** downloads the image, scene, settings, renderer/effect IDs and paused frame; **Open project** restores them without interpreting again.
+The user edits presentation in the studio. **Image** downloads a PNG. **Loop** renders and previews MP4/AVC or WebM depending on browser encoders. **Project JSON** downloads the image, scene, settings, renderer/effect IDs and paused frame; **Import Project** restores them without interpreting again.
+
+In the newer source studio, Label opacity fades text and callouts without changing saved label selection. New project JSON uses format v3 and needs this studio; pinned `v0.1.0` rejects it explicitly. Older projects import with their label selection preserved and full opacity.
+
+Loop export in this source studio defaults to exact original image dimensions, with 720/1080 px presets available. Native odd dimensions may select WebM instead of MP4; unsupported dimensions fail explicitly. The pinned `v0.1.0` export retains its 1080 px default.
 
 ## Repeatability and sharing
 

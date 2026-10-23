@@ -29,7 +29,7 @@ export function validateScene(scene) {
   return scene;
 }
 
-export const defaults = Object.freeze({network:'constellation', preset:'specimen', motion:'acquire', speed:2, duration:12, density:100, labels:65, lineWidth:0.8, opacity:60, markerSize:20, grayscale:100, exposure:84, grid:0, primary:'#f2f0e7', accent:'#e5b693', highlight:25, drift:0, imageStyle:'bw', xrayContrast:85, shape:'balanced', seed:1, range:100, maxLinks:4, fontSize:10, letterSpacing:2, avoidOverlap:true, labelMode:'observed', customLabels:'not.found, signal.lost, parse.fail, corrupt.data, null.ref, retry.{n}, {coord}', font:'mono',labelMotion:'anchored',noteTravel:14,adaptiveOverlay:true,surfaceTone:55});
+export const defaults = Object.freeze({network:'constellation', preset:'specimen', motion:'acquire', speed:2, duration:12, density:100, labels:65, labelOpacity:100, lineWidth:0.8, opacity:60, markerSize:20, grayscale:100, exposure:84, grid:0, primary:'#f2f0e7', accent:'#e5b693', highlight:25, drift:0, imageStyle:'bw', xrayContrast:85, shape:'balanced', seed:1, range:100, maxLinks:4, fontSize:10, letterSpacing:2, avoidOverlap:true, labelMode:'observed', customLabels:'not.found, signal.lost, parse.fail, corrupt.data, null.ref, retry.{n}, {coord}', font:'mono',labelMotion:'anchored',noteTravel:14,adaptiveOverlay:true,surfaceTone:55});
 export const presets = {
   specimen:{grayscale:100, exposure:84, lineWidth:0.8, opacity:60, markerSize:17, labels:65, grid:0, accent:'#e5b693'},
   natural:{grayscale:10, exposure:90, lineWidth:0.9, opacity:65, markerSize:14, labels:50, grid:0, accent:'#eac997'},

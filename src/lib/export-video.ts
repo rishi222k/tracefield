@@ -11,13 +11,13 @@ import { videoPlan, exportSize } from "../../public/timeline.js";
 import { studio } from "./studio";
 export async function exportVideo({
   fps = 30,
-  size = 1080,
+  size = "source",
   signal,
   snapshot,
   onProgress = () => {},
 }: {
   fps?: number;
-  size?: number;
+  size?: number | "source";
   signal?: AbortSignal;
   snapshot?: ReturnType<typeof studio.capture>;
   onProgress?: (done: number, total: number) => void;
@@ -41,7 +41,7 @@ export async function exportVideo({
   });
   if (!codec)
     throw new Error(
-      "This browser has no supported video encoder. Open the studio in a browser with WebCodecs video support.",
+      "This browser cannot encode the selected video dimensions. Try 1080 px or 720 px, or a browser with WebCodecs video support.",
     );
   const target = new BufferTarget(),
     format =

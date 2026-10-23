@@ -1,0 +1,539 @@
+{
+  "version": 1,
+  "id": "swallowtail",
+  "title": "Swallowtail",
+  "subtitle": "Two visible wings, yellow markings and tail tip; thistles excluded.",
+  "analysis": {
+    "version": "tracefield-interpretation-v1",
+    "sourceSha256": "0badc74872d1170a4b491291044187fe85bef305ac539d63b92dd76ee54a729f",
+    "type": "agent-authored",
+    "inputSha256": "037bcaee51c5a12f0cd20e9b5556a996e2626904dcc28853ba2e26de3aa7cb0b",
+    "ingestionVersion": "canonical-png-v1",
+    "proposalVersion": "feature-proposal-v3"
+  },
+  "image": {
+    "src": "/library/swallowtail/image.png",
+    "width": 1086,
+    "height": 1448
+  },
+  "nodes": [
+    {
+      "id": "wing-edge-1",
+      "x": 0.701,
+      "y": 0.222,
+      "label": "wing-edge.01",
+      "kind": "observation",
+      "reason": "Upright rear wing tip. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        -18
+      ]
+    },
+    {
+      "id": "wing-edge-2",
+      "x": 0.989,
+      "y": 0.371,
+      "label": "wing-edge.02",
+      "kind": "observation",
+      "reason": "Front upper wing tip. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "wing-edge-3",
+      "x": 0.87,
+      "y": 0.489,
+      "label": "wing-edge.03",
+      "kind": "observation",
+      "reason": "Outer wing bend. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        -18
+      ]
+    },
+    {
+      "id": "wing-edge-4",
+      "x": 0.824,
+      "y": 0.579,
+      "label": "wing-edge.04",
+      "kind": "observation",
+      "reason": "Lower hindwing bend. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "wing-edge-5",
+      "x": 0.692,
+      "y": 0.688,
+      "label": "wing-edge.05",
+      "kind": "observation",
+      "reason": "Scalloped lower wing boundary. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "yellow-mark-1",
+      "x": 0.692,
+      "y": 0.238,
+      "label": "yellow-mark.01",
+      "kind": "observation",
+      "reason": "Upper rear wing patch. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "yellow-mark-2",
+      "x": 0.66,
+      "y": 0.268,
+      "label": "yellow-mark.02",
+      "kind": "observation",
+      "reason": "Rear wing second patch. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "yellow-mark-3",
+      "x": 0.617,
+      "y": 0.341,
+      "label": "yellow-mark.03",
+      "kind": "observation",
+      "reason": "Rear wing lower patch. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "yellow-mark-4",
+      "x": 0.943,
+      "y": 0.365,
+      "label": "yellow-mark.04",
+      "kind": "observation",
+      "reason": "Upper front yellow patch. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "yellow-mark-5",
+      "x": 0.808,
+      "y": 0.417,
+      "label": "yellow-mark.05",
+      "kind": "observation",
+      "reason": "Central yellow patch. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        -18
+      ]
+    },
+    {
+      "id": "yellow-mark-6",
+      "x": 0.736,
+      "y": 0.449,
+      "label": "yellow-mark.06",
+      "kind": "observation",
+      "reason": "Lower central yellow patch. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "yellow-mark-7",
+      "x": 0.65,
+      "y": 0.523,
+      "label": "yellow-mark.07",
+      "kind": "observation",
+      "reason": "Near root yellow patch. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "yellow-mark-8",
+      "x": 0.746,
+      "y": 0.613,
+      "label": "yellow-mark.08",
+      "kind": "observation",
+      "reason": "Lower hindwing yellow patch. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        18
+      ]
+    },
+    {
+      "id": "tail-tip-1",
+      "x": 0.85,
+      "y": 0.704,
+      "label": "tail-tip.01",
+      "kind": "observation",
+      "reason": "Visible pale-tipped hindwing tail. Authored from this visible image detail.",
+      "labelOffset": [
+        -78,
+        -18
+      ]
+    },
+    {
+      "id": "wing-root-1",
+      "x": 0.515,
+      "y": 0.5,
+      "label": "wing-root.01",
+      "kind": "observation",
+      "reason": "Main wing junction. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "wing-root-2",
+      "x": 0.555,
+      "y": 0.539,
+      "label": "wing-root.02",
+      "kind": "observation",
+      "reason": "Lower wing root. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "eye-1",
+      "x": 0.456,
+      "y": 0.484,
+      "label": "eye.01",
+      "kind": "observation",
+      "reason": "Visible dark eye. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "antenna-1",
+      "x": 0.389,
+      "y": 0.367,
+      "label": "antenna.01",
+      "kind": "observation",
+      "reason": "Upper antenna tip. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "antenna-2",
+      "x": 0.441,
+      "y": 0.424,
+      "label": "antenna.02",
+      "kind": "observation",
+      "reason": "Second antenna bend. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "body-1",
+      "x": 0.488,
+      "y": 0.538,
+      "label": "body.01",
+      "kind": "observation",
+      "reason": "Furry thorax. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    },
+    {
+      "id": "body-2",
+      "x": 0.539,
+      "y": 0.629,
+      "label": "body.02",
+      "kind": "observation",
+      "reason": "Abdomen tip. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        18
+      ]
+    },
+    {
+      "id": "body-3",
+      "x": 0.432,
+      "y": 0.553,
+      "label": "body.03",
+      "kind": "observation",
+      "reason": "Visible leg junction. Authored from this visible image detail.",
+      "labelOffset": [
+        22,
+        -18
+      ]
+    }
+  ],
+  "networks": {
+    "constellation": {
+      "title": "Constellation",
+      "meaning": "Decorative subject-bound geometric web.",
+      "edges": [
+        {
+          "a": "wing-edge-1",
+          "b": "yellow-mark-1",
+          "reason": "wing-edge.01 → yellow-mark.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "yellow-mark-1",
+          "b": "yellow-mark-2",
+          "reason": "yellow-mark.01 → yellow-mark.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "yellow-mark-1",
+          "b": "yellow-mark-4",
+          "reason": "yellow-mark.01 → yellow-mark.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.4063
+        },
+        {
+          "a": "yellow-mark-2",
+          "b": "yellow-mark-3",
+          "reason": "yellow-mark.02 → yellow-mark.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "yellow-mark-3",
+          "b": "antenna-2",
+          "reason": "yellow-mark.03 → antenna.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9068
+        },
+        {
+          "a": "yellow-mark-3",
+          "b": "yellow-mark-6",
+          "reason": "yellow-mark.03 → yellow-mark.06: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "yellow-mark-3",
+          "b": "wing-root-1",
+          "reason": "yellow-mark.03 → wing-root.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.626
+        },
+        {
+          "a": "wing-edge-2",
+          "b": "yellow-mark-4",
+          "reason": "wing-edge.02 → yellow-mark.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "yellow-mark-4",
+          "b": "yellow-mark-5",
+          "reason": "yellow-mark.04 → yellow-mark.05: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-edge-3",
+          "b": "yellow-mark-4",
+          "reason": "wing-edge.03 → yellow-mark.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6302
+        },
+        {
+          "a": "antenna-1",
+          "b": "antenna-2",
+          "reason": "antenna.01 → antenna.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9186
+        },
+        {
+          "a": "yellow-mark-5",
+          "b": "yellow-mark-6",
+          "reason": "yellow-mark.05 → yellow-mark.06: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-edge-3",
+          "b": "yellow-mark-5",
+          "reason": "wing-edge.03 → yellow-mark.05: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "eye-1",
+          "b": "antenna-2",
+          "reason": "eye.01 → antenna.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9079
+        },
+        {
+          "a": "yellow-mark-6",
+          "b": "yellow-mark-7",
+          "reason": "yellow-mark.06 → yellow-mark.07: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-root-1",
+          "b": "eye-1",
+          "reason": "wing-root.01 → eye.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "eye-1",
+          "b": "body-1",
+          "reason": "eye.01 → body.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6368
+        },
+        {
+          "a": "eye-1",
+          "b": "body-3",
+          "reason": "eye.01 → body.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6221
+        },
+        {
+          "a": "wing-edge-3",
+          "b": "wing-edge-4",
+          "reason": "wing-edge.03 → wing-edge.04: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9837
+        },
+        {
+          "a": "wing-root-1",
+          "b": "body-1",
+          "reason": "wing-root.01 → body.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9537
+        },
+        {
+          "a": "wing-root-1",
+          "b": "wing-root-2",
+          "reason": "wing-root.01 → wing-root.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.824
+        },
+        {
+          "a": "yellow-mark-7",
+          "b": "wing-root-2",
+          "reason": "yellow-mark.07 → wing-root.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "yellow-mark-7",
+          "b": "yellow-mark-8",
+          "reason": "yellow-mark.07 → yellow-mark.08: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-root-2",
+          "b": "body-1",
+          "reason": "wing-root.02 → body.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7785
+        },
+        {
+          "a": "body-1",
+          "b": "body-3",
+          "reason": "body.01 → body.03: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "body-1",
+          "b": "body-2",
+          "reason": "body.01 → body.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.651
+        },
+        {
+          "a": "wing-root-2",
+          "b": "body-2",
+          "reason": "wing-root.02 → body.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-edge-4",
+          "b": "yellow-mark-8",
+          "reason": "wing-edge.04 → yellow-mark.08: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "wing-edge-4",
+          "b": "tail-tip-1",
+          "reason": "wing-edge.04 → tail-tip.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.6146
+        },
+        {
+          "a": "wing-edge-5",
+          "b": "yellow-mark-8",
+          "reason": "wing-edge.05 → yellow-mark.08: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 1
+        },
+        {
+          "a": "yellow-mark-8",
+          "b": "tail-tip-1",
+          "reason": "yellow-mark.08 → tail-tip.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7964
+        },
+        {
+          "a": "wing-edge-5",
+          "b": "body-2",
+          "reason": "wing-edge.05 → body.02: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.9607
+        },
+        {
+          "a": "wing-edge-5",
+          "b": "tail-tip-1",
+          "reason": "wing-edge.05 → tail-tip.01: Neighbours: no other point lies inside the circle spanning this pair, and the line stays on the subject.",
+          "weight": 0.7252
+        }
+      ]
+    },
+    "structure": {
+      "title": "Structure",
+      "meaning": "Unused; no measured relationship claimed.",
+      "edges": []
+    },
+    "pattern": {
+      "title": "Pattern",
+      "meaning": "Unused; no measured relationship claimed.",
+      "edges": []
+    }
+  },
+  "rules": {
+    "roles": [
+      {
+        "role": "wing-edge",
+        "rule": "Visible tip or turn of a butterfly wing outline."
+      },
+      {
+        "role": "yellow-mark",
+        "rule": "Center of a discrete yellow wing patch."
+      },
+      {
+        "role": "tail-tip",
+        "rule": "Visible elongated hindwing tail tip."
+      },
+      {
+        "role": "wing-root",
+        "rule": "Visible wing and thorax junction."
+      },
+      {
+        "role": "eye",
+        "rule": "Visible dark eye."
+      },
+      {
+        "role": "antenna",
+        "rule": "Visible antenna tip."
+      },
+      {
+        "role": "body",
+        "rule": "Visible thorax, abdomen or leg junction."
+      }
+    ],
+    "link": "Decorative subject-bound neighbours with empty diametral circles, a narrow image-saliency envelope and shortest bridges between disconnected subject parts; no measured or semantic relationships."
+  },
+  "focus": [
+    "eye-1",
+    "wing-root-1"
+  ],
+  "observations": []
+}
