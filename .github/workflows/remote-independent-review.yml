@@ -29,10 +29,15 @@ concurrency:
 jobs:
   remote-independent-review:
     # Drafts are still being written. Dependabot runs have no secrets; review
-    # those by dispatching this workflow by hand.
+    # those by dispatching this workflow by hand. Tracefield is public: only
+    # PRs from branches in this repo spend the reviewer credential, so outside
+    # contributions can never consume it even if the trigger changes later.
+    # Review an outside PR deliberately by dispatching this workflow.
     if: >-
       github.event_name == 'workflow_dispatch' ||
-      (github.event.pull_request.draft == false && github.actor != 'dependabot[bot]')
+      (github.event.pull_request.draft == false &&
+       github.actor != 'dependabot[bot]' &&
+       github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
