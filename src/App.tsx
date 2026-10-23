@@ -331,6 +331,7 @@ const Inspector = memo(function Inspector() {
         </div>
         <SettingScrub field="markerSize" label="Size" format={(v) => `${Math.round(v)}px`} />
         <SettingScrub field="highlight" label="Accent" format={(v) => `${Math.round(v)}%`} />
+        <SettingScrub field="labels" label="Labels" format={(v) => `${Math.round(v)}%`} />
         <SettingScrub field="labelOpacity" label="Label opacity" format={(v) => `${Math.round(v)}%`} />
       </section>
     </aside>

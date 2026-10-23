@@ -43,7 +43,7 @@ The skill sets up the pinned runtime in `~/tracefield-lab` (override with `TRACE
 The approved studio has a neutral dark workspace, collapsible image rail, **Original / Network** comparison and a compact inspector:
 
 - **Blend:** Original, Mono, X-ray, Dark X-ray and Blueprint, with intensity controls.
-- **Markers:** seven styles, size, accent share and label opacity. Opacity fades label text and callouts without changing the chosen labels.
+- **Markers:** seven styles, size, accent share, label density and label opacity. Density sets how many labels show; opacity fades label text and callouts without changing which labels are chosen.
 - **Timeline:** play, restart, scrub, loop length and speed; the v3 Trace loop defaults to 2×.
 - **Import Project:** a separate button beside Export; restores a saved project even when the library is empty.
 - **Export:** Image, Loop and Project JSON.
