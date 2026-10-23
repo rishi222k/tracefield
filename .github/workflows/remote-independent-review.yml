@@ -29,10 +29,15 @@ concurrency:
 jobs:
   remote-independent-review:
     # Drafts are still being written. Dependabot runs have no secrets; review
-    # those by dispatching this workflow by hand.
+    # those by dispatching this workflow by hand. Tracefield is public: only
+    # PRs from branches in this repo spend the reviewer credential, so outside
+    # contributions can never consume it even if the trigger changes later.
+    # Review an outside PR deliberately by dispatching this workflow.
     if: >-
       github.event_name == 'workflow_dispatch' ||
-      (github.event.pull_request.draft == false && github.actor != 'dependabot[bot]')
+      (github.event.pull_request.draft == false &&
+       github.actor != 'dependabot[bot]' &&
+       github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -79,7 +84,7 @@ jobs:
 
       - name: Checkout PR
         if: steps.pr.outcome == 'success'
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           # Pin the SHA so a push mid-run cannot be reviewed half-old. Full
           # history so the reviewer compares against the base branch.
@@ -92,7 +97,7 @@ jobs:
           git fetch --no-tags origin \
             "+refs/heads/${{ steps.pr.outputs.base }}:refs/remotes/origin/${{ steps.pr.outputs.base }}"
 
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         if: steps.pr.outcome == 'success'
         with:
           node-version: 24
