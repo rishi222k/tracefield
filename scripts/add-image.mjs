@@ -9,6 +9,7 @@ import {PNG} from 'pngjs';
 import {analyzeFeatures} from '../public/feature-analysis.js';
 import {validateScene} from '../public/scene.js';
 
+const DEMO_IDS=new Set(JSON.parse(await readFile(new URL('../public/demo-assets.json',import.meta.url),'utf8')).assets.map(a=>a.id));
 const MAX_BYTES=20_000_000,MAX_PIXELS=32_000_000,MAX=4096,DOWNSCALE_TO=2400;
 export const sha256=bytes=>createHash('sha256').update(bytes).digest('hex');
 export function decode(bytes){
@@ -68,6 +69,8 @@ export async function addImage(file,{id,title,library,replace=false}={}){
  const explicitId=id!==undefined;
  id=slugify(id||path.basename(file));
  if(['orange','purple'].includes(id))throw new Error('That id is reserved for a bundled sample.');
+ // Demo studies are tracked in this public repo; writing a private photo over one would stage it for publishing.
+ if(DEMO_IDS.has(id))throw new Error(`That id is reserved for the public demo study ${id}. Choose a different --id.`);
  if((await stat(file)).size>MAX_BYTES)throw new Error('Image is larger than 20 MB.');
  const original=await readFile(file),inputSha=sha256(original);
  await mkdir(library,{recursive:true});

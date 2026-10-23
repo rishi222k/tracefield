@@ -28,6 +28,7 @@ test('add-image writes a deterministic, valid library entry',async()=>{
  assert.equal(reuse.reused,true);assert.equal(reuse.scene.subtitle,'Accepted scene');
  assert.equal(JSON.parse(await readFile(path.join(dir,'a','index.local.json'),'utf8')).length,1,'re-adding replaces the entry');
  await assert.rejects(addImage(file,{library:path.join(dir,'c'),id:'orange'}),/reserved/);
+ for(const demo of ['honeybee','black-horse'])await assert.rejects(addImage(file,{library:path.join(dir,'c'),id:demo,replace:true}),/public demo study/);
 });
 
 test('library scenes can only use their own library image',async()=>{
